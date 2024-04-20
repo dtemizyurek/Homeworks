@@ -18,6 +18,7 @@
 		45B876C02BD3FF0500650797 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B876BF2BD3FF0500650797 /* Date.swift */; };
 		45B876C22BD3FFED00650797 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B876C12BD3FFED00650797 /* Time.swift */; };
 		45B876C42BD4006000650797 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B876C32BD4006000650797 /* Ticket.swift */; };
+		45B876C62BD4077300650797 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B876C52BD4077300650797 /* Routes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		45B876BF2BD3FF0500650797 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		45B876C12BD3FFED00650797 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		45B876C32BD4006000650797 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		45B876C52BD4077300650797 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				45B876BF2BD3FF0500650797 /* Date.swift */,
 				45B876C12BD3FFED00650797 /* Time.swift */,
 				45B876C32BD4006000650797 /* Ticket.swift */,
+				45B876C52BD4077300650797 /* Routes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				45B876C02BD3FF0500650797 /* Date.swift in Sources */,
 				45B876C22BD3FFED00650797 /* Time.swift in Sources */,
 				45B876C42BD4006000650797 /* Ticket.swift in Sources */,
+				45B876C62BD4077300650797 /* Routes.swift in Sources */,
 				45B876A72BD3FD7E00650797 /* AppDelegate.swift in Sources */,
 				45B876BC2BD3FDD200650797 /* Passenger.swift in Sources */,
 				45B876A92BD3FD7E00650797 /* SceneDelegate.swift in Sources */,
