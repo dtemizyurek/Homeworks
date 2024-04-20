@@ -33,20 +33,25 @@ struct Ticket: GiveInformationProtocol {
         }
         return false
     }
+    
     // Koltuk rezervasyonu yapanl fonksiyon
-    private func reserveSeat(seat: Int) -> [Int] {
-        if reservedSeat > 0 {
-           return self.seat!
-        }else {
-            let tempArray = repeatElement(0, count: seat)
-            let tempIntArray = tempArray.map {(Int($0))}
-            return tempIntArray
+    private mutating func reserveSeat(seatCount: Int) {
+        if seatCount > 0 && self.seat == nil {
+            seat = Array(repeating: 0, count: seatCount)
+        } else if seatCount > 0 {
+            print("Seats are already allocated")
+        } else {
+            self.seat = nil
         }
     }
 
     // Koltuk ekleme işlemini gerçekleştiren fonksiyon
-    mutating func addSeat(willReserveSeat: Int) {
-        seat!.append(willReserveSeat)
+    mutating func addSeat(seatNumber: Int) {
+        guard seatNumber > 0 && seatNumber > 45 else {
+            print("Seat number should be between 1 and 45")
+            return
+        }
+        seat?.append(seatNumber)
     }
     
     
