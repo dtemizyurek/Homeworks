@@ -62,19 +62,8 @@ struct Ticket: GiveInformationProtocol {
     
     
     func printInformation() {
-        print("Passengers:")
-        for passenger in passenger {
-            print("- \(passenger.name)")
-        }
 
-        print("Date: \(date)")
-        print("Time: \(time)")
-        
-        if let seat = seat {
-            print("Reserved Seat Numbers: \(seat)")
-        } else {
-            print("No seats reserved yet.")
-        }
+        print("aaa")
         
     }
 }

@@ -10,6 +10,8 @@ import Foundation
 struct Routes {
     let companyName: String
     let companyImage: String
+    let timeLabel: String?
+    let dateLabel: String?
     let price: String
     let departurePoint: String
     let destinationPoint: String
