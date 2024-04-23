@@ -11,7 +11,7 @@ struct Passanger: GiveInformationProtocol {
     
     let name = ""
     let surname = ""
-    let id = ""
+    let id = 0
     
     func printInformation() {
         print("Yolcu Adı: \(name) , Yolcu Soyadı\(surname), Yolcu id : \(id)")
