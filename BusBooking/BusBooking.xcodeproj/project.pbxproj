@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4588BA802BDA69C200AFE8ED /* BusServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588BA7E2BDA69C200AFE8ED /* BusServicesViewController.swift */; };
+		4588BA812BDA69C300AFE8ED /* BusServicesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4588BA7F2BDA69C200AFE8ED /* BusServicesViewController.xib */; };
 		458FC82C2BD85FA300E91C87 /* AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458FC82B2BD85FA300E91C87 /* AlertExtension.swift */; };
 		45B876A72BD3FD7E00650797 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B876A62BD3FD7E00650797 /* AppDelegate.swift */; };
 		45B876A92BD3FD7E00650797 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B876A82BD3FD7E00650797 /* SceneDelegate.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4588BA7E2BDA69C200AFE8ED /* BusServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusServicesViewController.swift; sourceTree = "<group>"; };
+		4588BA7F2BDA69C200AFE8ED /* BusServicesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusServicesViewController.xib; sourceTree = "<group>"; };
 		458FC82B2BD85FA300E91C87 /* AlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExtension.swift; sourceTree = "<group>"; };
 		45B876A32BD3FD7E00650797 /* BusBooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusBooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B876A62BD3FD7E00650797 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,24 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		459C1A272BD9AD0F007CFDC6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				45B876AC2BD3FD7E00650797 /* Main.storyboard */,
+				4588BA7F2BDA69C200AFE8ED /* BusServicesViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		459C1A282BD9AD28007CFDC6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				45B876AA2BD3FD7E00650797 /* ViewController.swift */,
+				4588BA7E2BDA69C200AFE8ED /* BusServicesViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		45B8769A2BD3FD7E00650797 = {
 			isa = PBXGroup;
 			children = (
@@ -78,12 +100,12 @@
 		45B876A52BD3FD7E00650797 /* BusBooking */ = {
 			isa = PBXGroup;
 			children = (
+				459C1A282BD9AD28007CFDC6 /* ViewControllers */,
+				459C1A272BD9AD0F007CFDC6 /* Views */,
 				458FC82A2BD85F8A00E91C87 /* Extensions */,
 				45B876BA2BD3FDBA00650797 /* Models */,
 				45B876A62BD3FD7E00650797 /* AppDelegate.swift */,
 				45B876A82BD3FD7E00650797 /* SceneDelegate.swift */,
-				45B876AA2BD3FD7E00650797 /* ViewController.swift */,
-				45B876AC2BD3FD7E00650797 /* Main.storyboard */,
 				45B876AF2BD3FD7F00650797 /* Assets.xcassets */,
 				45B876B12BD3FD7F00650797 /* LaunchScreen.storyboard */,
 				45B876B42BD3FD7F00650797 /* Info.plist */,
@@ -165,6 +187,7 @@
 				45B876B32BD3FD7F00650797 /* LaunchScreen.storyboard in Resources */,
 				45B876B02BD3FD7F00650797 /* Assets.xcassets in Resources */,
 				45B876AE2BD3FD7E00650797 /* Main.storyboard in Resources */,
+				4588BA812BDA69C300AFE8ED /* BusServicesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +205,7 @@
 				45B876C42BD4006000650797 /* Ticket.swift in Sources */,
 				45B876C62BD4077300650797 /* Routes.swift in Sources */,
 				45B876A72BD3FD7E00650797 /* AppDelegate.swift in Sources */,
+				4588BA802BDA69C200AFE8ED /* BusServicesViewController.swift in Sources */,
 				45B876BC2BD3FDD200650797 /* Passenger.swift in Sources */,
 				45B876A92BD3FD7E00650797 /* SceneDelegate.swift in Sources */,
 				45B876BE2BD3FE1000650797 /* GiveInformationProtocol.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Date: GiveInformationProtocol {
+struct Dates: GiveInformationProtocol {
     
     let day = 1
     let month = 1
