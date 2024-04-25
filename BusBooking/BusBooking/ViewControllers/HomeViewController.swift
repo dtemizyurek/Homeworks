@@ -8,16 +8,16 @@
 import UIKit
 import MapKit
 
-final class ViewController: UIViewController {
+final class HomeViewContoller: UIViewController {
     
     //MARK: -IBOutlets
-    @IBOutlet weak var departureTextfield: UITextField!
-    @IBOutlet weak var arrivalTextField: UITextField!
-    @IBOutlet weak var citiesImageView: UIImageView!
-    @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var busView: UIView!
-    @IBOutlet weak var changeButton: UIButton!
-    @IBOutlet weak var seeExpeditionsButton: UIButton!
+    @IBOutlet private weak var departureTextfield: UITextField!
+    @IBOutlet private weak var arrivalTextField: UITextField!
+    @IBOutlet private weak var citiesImageView: UIImageView!
+    @IBOutlet private weak var datePicker: UIDatePicker!
+    @IBOutlet private weak var busView: UIView!
+    @IBOutlet private weak var changeButton: UIButton!
+    @IBOutlet private weak var seeExpeditionsButton: UIButton!
     //MARK: - Variables
     var departurePickerView = UIPickerView()
     var arrivalPickerView = UIPickerView()
@@ -94,27 +94,41 @@ final class ViewController: UIViewController {
         arrivalPickerView.dataSource = self
         arrivalPickerView.delegate = self
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
     //MARK: - Button Actions
     
     @IBAction func seeExpeditions(_ sender: UIButton) {
-        let today = Date() // Get today's date
+        let today = Date() // Bugünün tarihini al
 
-          if departureTextfield.text == "" || arrivalTextField.text == "" {
-              UIAlertController.alertMessage(title: "Hata", message: "Binilen veya gidilecek yer girilmedi", vc: self)
-          } else if arrivalTextField.text == departureTextfield.text {
-              UIAlertController.alertMessage(title: "Hata", message: "Aynı şehirler arası gidemezsiniz", vc: self)
-          } else if datePicker.date == datePicker.minimumDate {
-              UIAlertController.alertMessage(title: "Hata", message: "Lütfen bir tarih seçin", vc: self)
-          } else if datePicker.date < today || datePicker.date == today {
-              UIAlertController.alertMessage(title: "Hata", message: "Geçmiş bir tarih seçtiniz, lütfen geçerli bir tarih seçin", vc: self)
-          } else {
-             // performSegue(withIdentifier: "toFindBusVC", sender: nil)
-              print("To find bus vc")
-          }
+         if departureTextfield.text == "" || arrivalTextField.text == "" {
+             UIAlertController.alertMessage(title: "Hata", message: "Kalkış veya varış yeri girilmedi", vc: self)
+         } else if arrivalTextField.text == departureTextfield.text {
+             UIAlertController.alertMessage(title: "Hata", message: "Aynı şehirler arası gidemezsiniz", vc: self)
+         } else if datePicker.date == datePicker.minimumDate {
+             UIAlertController.alertMessage(title: "Hata", message: "Lütfen bir tarih seçin", vc: self)
+         } else if datePicker.date < today || datePicker.date == today {
+             UIAlertController.alertMessage(title: "Hata", message: "Geçmiş bir tarih seçtiniz, lütfen geçerli bir tarih seçin", vc: self)
+         } else {
+             let findBusVC = BusServicesViewController(nibName: BusServicesViewController.identifier, bundle: nil)
+             findBusVC.departure = departureTextfield.text ?? "Belirtilmemiş"
+             findBusVC.arrival = arrivalTextField.text ?? "Belirtilmemiş"
+             let dateFormatter = DateFormatter()
+             dateFormatter.dateFormat = "dd/MM/yyyy" 
+             findBusVC.date = dateFormatter.string(from: datePicker.date)
+             
+             navigationController?.pushViewController(findBusVC, animated: true)
+             print("Next page")
+         }
     }
+    //MARK: - Segue
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        <#code#>
+//    }
 }
 //MARK: - PickerView Extensions
-extension ViewController: UIPickerViewDelegate,UIPickerViewDataSource {
+extension HomeViewContoller: UIPickerViewDelegate,UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }

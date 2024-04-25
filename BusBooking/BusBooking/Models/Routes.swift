@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 struct Routes {
     let companyName: String
     let companyImage: String
     let timeLabel: String?
     let dateLabel: String?
-    let price: String
+    let price: Int
     let departurePoint: String
-    let destinationPoint: String
+    let arrivalPoint: String
 }
