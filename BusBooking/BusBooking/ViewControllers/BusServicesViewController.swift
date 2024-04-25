@@ -18,7 +18,7 @@ final class BusServicesViewController: UIViewController {
     //MARK: - Variables
     private var startedTime = String()
     private var finisihedTime = ["08:30","10:30","10:45","09:00","14:00","13:00"]
-    private var price = Int()
+    private var price = [700,800,900,1000,1200,1300]
     var routes = [Routes]()
     var departure = String()
     var arrival = String()
@@ -30,6 +30,7 @@ final class BusServicesViewController: UIViewController {
         super.viewDidLoad()
         collectionViewRegister()
         prepareLabels()
+        routesAppend()
     }
     
     private func prepareLabels(){
@@ -41,17 +42,47 @@ final class BusServicesViewController: UIViewController {
     private func collectionViewRegister() {
         collectionView.register(UINib(nibName: RoutesCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: RoutesCollectionViewCell.identifier)
     }
+    
+    private func routesAppend() {
+        routes =
+        [.init(companyName: "Has Turizm", companyImage: "has", timeLabel: "06:00", dateLabel: date, price: price[1], departurePoint: departure, arrivalPoint: arrival),
+         .init(companyName: "Çayırağası Turizm", companyImage: "cayiragasi", timeLabel: "08:00", dateLabel: date, price: price[3], departurePoint: departure, arrivalPoint: arrival),
+         .init(companyName: "Öz Diyarbakır Turizm", companyImage: "diyarbakır", timeLabel: "10:00", dateLabel: date, price: price[1], departurePoint: departure, arrivalPoint: arrival),
+         .init(companyName: "Seç Turizm", companyImage: "sec", timeLabel: "12:00", dateLabel: date, price: price[3], departurePoint: departure, arrivalPoint: arrival),
+         .init(companyName: "Lüks Adana Turizm", companyImage: "adana", timeLabel: "13:00", dateLabel: date, price: price[3], departurePoint: departure, arrivalPoint: arrival),
+         .init(companyName: "Lider Muş Tur Turizm", companyImage: "mus", timeLabel: "14:00", dateLabel: date, price: price[2], departurePoint: departure, arrivalPoint: arrival),
+         .init(companyName: "Metro Turizm", companyImage: "metro", timeLabel: "16:00", dateLabel: date, price: price[1], departurePoint: departure, arrivalPoint: arrival),
+         .init(companyName: "Kamil Koç Turizm", companyImage: "kamilkoc", timeLabel: "17:00", dateLabel: date, price: price[2], departurePoint: departure, arrivalPoint: arrival),
+         .init(companyName: "Varan Turizm", companyImage: "varan", timeLabel: "18:00", dateLabel: date, price: price[2], departurePoint: departure, arrivalPoint: arrival),
+         .init(companyName: "Ben Turizm", companyImage: "ben", timeLabel: "20:00", dateLabel: date, price: price[2], departurePoint: departure, arrivalPoint: arrival),
+         .init(companyName: "Kamil Koç Turizm", companyImage: "kamilkoc", timeLabel: "22:00", dateLabel: date, price: price[2], departurePoint: departure, arrivalPoint: arrival),
+         .init(companyName: "Metro Turizm", companyImage: "metro", timeLabel: "00:00", dateLabel: date, price: price[1], departurePoint: departure, arrivalPoint: arrival),
+        ]
+    }
+    
 }
 
 //MARK: - CollectionView Extensions
 extension BusServicesViewController: UICollectionViewDataSource,UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         routes.count
     }
-    
+       
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RoutesCollectionViewCell.identifier, for: indexPath) as? RoutesCollectionViewCell else {return UICollectionViewCell()}
-        cell.config(routes[indexPath.item])
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RoutesCollectionViewCell.identifier, for: indexPath) as? RoutesCollectionViewCell else { return UICollectionViewCell() }
+        
+        cell.config(with: routes[indexPath.item])
         return cell
+        
     }
+       
+       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+           let cellWidth: CGFloat = collectionView.frame.width - 20
+           let cellHeight: CGFloat = 200
+           
+           return CGSize(width: cellWidth, height: cellHeight)
+       }
+    
+    
 }

@@ -100,7 +100,7 @@ final class HomeViewContoller: UIViewController {
     //MARK: - Button Actions
     
     @IBAction func seeExpeditions(_ sender: UIButton) {
-        let today = Date() // Bugünün tarihini al
+        let today = Date() 
 
          if departureTextfield.text == "" || arrivalTextField.text == "" {
              UIAlertController.alertMessage(title: "Hata", message: "Kalkış veya varış yeri girilmedi", vc: self)
@@ -122,10 +122,6 @@ final class HomeViewContoller: UIViewController {
              print("Next page")
          }
     }
-    //MARK: - Segue
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        <#code#>
-//    }
 }
 //MARK: - PickerView Extensions
 extension HomeViewContoller: UIPickerViewDelegate,UIPickerViewDataSource {
