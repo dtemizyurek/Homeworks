@@ -85,6 +85,8 @@ extension BusServicesViewController: UICollectionViewDataSource,UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectSeatVC = SelectSeatsViewController(nibName: SelectSeatsViewController.identifier, bundle: nil)
         navigationController?.pushViewController(selectSeatVC, animated: true)
+        selectSeatVC.arrivalText = self.arrival
+        selectSeatVC.departureText = self.departure
         print("Select Seat VC")
     }
     

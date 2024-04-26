@@ -11,12 +11,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectSeatsViewController" customModule="BusBooking" customModuleProvider="target">
             <connections>
                 <outlet property="arrivalLabel" destination="llB-xb-Wo7" id="5rH-XF-Yxg"/>
-                <outlet property="arrivalTime" destination="Zya-t5-cAC" id="fHl-2t-Dnq"/>
                 <outlet property="collectionView" destination="Odo-df-AY7" id="VJZ-eU-z4b"/>
-                <outlet property="companyName" destination="Bix-yr-pbS" id="b9I-TA-eHZ"/>
                 <outlet property="dateLabel" destination="ByU-vI-ypq" id="L01-RG-qA4"/>
                 <outlet property="departureLabel" destination="nit-Lp-eiU" id="1gX-ZI-yI3"/>
-                <outlet property="departureTimeLabel" destination="WkJ-tc-xIC" id="WNG-cl-RiY"/>
                 <outlet property="priceLabel" destination="ora-pc-FZD" id="1rz-NS-4Gu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
