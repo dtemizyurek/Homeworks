@@ -10,7 +10,7 @@ import UIKit
 final class BusServicesViewController: UIViewController {
     
     //MARK: - IBOutlets
-    @IBOutlet private weak var departureLabel: UILabel! // Outletleri private yap!
+    @IBOutlet private weak var departureLabel: UILabel!
     @IBOutlet private weak var arrivalLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -59,11 +59,10 @@ final class BusServicesViewController: UIViewController {
          .init(companyName: "Metro Turizm", companyImage: "metro", timeLabel: "00:00", dateLabel: date, price: price[1], departurePoint: departure, arrivalPoint: arrival),
         ]
     }
-    
 }
 
 //MARK: - CollectionView Extensions
-extension BusServicesViewController: UICollectionViewDataSource,UICollectionViewDelegate {
+extension BusServicesViewController: UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         routes.count
@@ -79,10 +78,18 @@ extension BusServicesViewController: UICollectionViewDataSource,UICollectionView
        
        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
            let cellWidth: CGFloat = collectionView.frame.width - 20
-           let cellHeight: CGFloat = 200
+           let cellHeight: CGFloat = 130
            
            return CGSize(width: cellWidth, height: cellHeight)
        }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectSeatVC = SelectSeatsViewController(nibName: SelectSeatsViewController.identifier, bundle: nil)
+        navigationController?.pushViewController(selectSeatVC, animated: true)
+        print("Select Seat VC")
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+    }
     
 }

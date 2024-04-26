@@ -1,0 +1,20 @@
+//
+//  SeatsCollectionViewCell.swift
+//  BusBooking
+//
+//  Created by Doğukan Temizyürek on 26.04.2024.
+//
+
+import UIKit
+
+class SeatsCollectionViewCell: UICollectionViewCell {
+
+    @IBOutlet weak var seatImage: UIImageView!
+    @IBOutlet weak var seatLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+
+}

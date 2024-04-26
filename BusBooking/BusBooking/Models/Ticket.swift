@@ -11,7 +11,7 @@ struct Ticket: GiveInformationProtocol {
     
     static var shared = Ticket()
     
-    var passenger: Passanger?
+    var passenger: Passenger?
     var date: String?
     var time: String?
     var seat: [Int]?

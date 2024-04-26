@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Passanger: GiveInformationProtocol {
+struct Passenger: GiveInformationProtocol {
     
     let name = ""
     let surname = ""

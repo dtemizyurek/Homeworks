@@ -45,24 +45,24 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VTg-VC-rXX">
-                                <rect key="frame" x="104" y="36.333333333333343" width="238" height="45.666666666666657"/>
+                                <rect key="frame" x="112" y="36.333333333333343" width="222" height="45.666666666666657"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25.04.2024" textAlignment="center" lineBreakMode="headTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="785-mh-YGw">
-                                        <rect key="frame" x="0.0" y="0.0" width="238" height="20.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="222" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-58" translatesAutoresizingMaskIntoConstraints="NO" id="G23-Mq-eOv">
-                                        <rect key="frame" x="0.0" y="25.333333333333329" width="238" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="25.333333333333329" width="222" height="20.333333333333329"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rGB-mI-qDM">
-                                                <rect key="frame" x="0.0" y="-2.3333333333333357" width="148" height="25.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="-2.3333333333333357" width="140" height="25.666666666666668"/>
                                                 <color key="tintColor" red="0.84313726430000002" green="0.231372565" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <imageReference key="image" image="timer" catalog="system" symbolScale="large"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7s 30 dk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXu-64-MRG">
-                                                <rect key="frame" x="90" y="0.0" width="148" height="20.333333333333332"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 h 30 m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXu-64-MRG">
+                                                <rect key="frame" x="82" y="0.0" width="140" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" systemColor="systemGray4Color"/>
                                                 <nil key="highlightedColor"/>
@@ -70,6 +70,9 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="785-mh-YGw" firstAttribute="centerX" secondItem="VTg-VC-rXX" secondAttribute="centerX" id="ctW-DQ-fJC"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="9SS-dD-fpJ">
                                 <rect key="frame" x="104" y="90" width="238" height="20.333333333333329"/>
@@ -91,13 +94,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="VTg-VC-rXX" secondAttribute="trailing" constant="8" id="ABm-4p-Ybs"/>
+                            <constraint firstAttribute="trailing" secondItem="VTg-VC-rXX" secondAttribute="trailing" constant="16" id="ABm-4p-Ybs"/>
                             <constraint firstItem="pbU-UN-kt5" firstAttribute="top" secondItem="zNj-1C-TbO" secondAttribute="top" constant="8" id="B4e-PN-hJM"/>
                             <constraint firstItem="VTg-VC-rXX" firstAttribute="top" secondItem="pbU-UN-kt5" secondAttribute="bottom" constant="8" id="PGO-a9-R5H"/>
                             <constraint firstItem="pbU-UN-kt5" firstAttribute="leading" secondItem="4I9-uV-Yj4" secondAttribute="trailing" constant="8" id="ReK-pR-ZsY"/>
                             <constraint firstAttribute="trailing" secondItem="9SS-dD-fpJ" secondAttribute="trailing" constant="8" id="YO0-s0-TEc"/>
                             <constraint firstItem="9SS-dD-fpJ" firstAttribute="leading" secondItem="4I9-uV-Yj4" secondAttribute="trailing" constant="8" id="dKi-V8-jmB"/>
-                            <constraint firstItem="VTg-VC-rXX" firstAttribute="leading" secondItem="4I9-uV-Yj4" secondAttribute="trailing" constant="8" id="fPu-6h-0Lx"/>
+                            <constraint firstItem="VTg-VC-rXX" firstAttribute="leading" secondItem="4I9-uV-Yj4" secondAttribute="trailing" constant="16" id="fPu-6h-0Lx"/>
                             <constraint firstAttribute="trailing" secondItem="pbU-UN-kt5" secondAttribute="trailing" constant="8" id="jMA-QW-1IB"/>
                             <constraint firstItem="4I9-uV-Yj4" firstAttribute="leading" secondItem="zNj-1C-TbO" secondAttribute="leading" constant="8" id="ktx-aA-EGf"/>
                             <constraint firstItem="9SS-dD-fpJ" firstAttribute="top" secondItem="VTg-VC-rXX" secondAttribute="bottom" constant="8" id="noz-ji-UaB"/>
@@ -130,7 +133,7 @@
     <resources>
         <image name="timer" catalog="system" width="128" height="123"/>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

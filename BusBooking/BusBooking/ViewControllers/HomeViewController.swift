@@ -18,20 +18,16 @@ final class HomeViewContoller: UIViewController {
     @IBOutlet private weak var busView: UIView!
     @IBOutlet private weak var changeButton: UIButton!
     @IBOutlet private weak var seeExpeditionsButton: UIButton!
+    
     //MARK: - Variables
     var departurePickerView = UIPickerView()
     var arrivalPickerView = UIPickerView()
     var cities = [String]()
-    let toolBar = UIToolbar()
-    let time = [8,10,9,7,11,10]
-    var findRoutes = [Routes]()
     var dateFormatter = DateFormatter()
-    private var price = ["700","800","900","1200"]
     
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         customDepartureTextfield()
         customArrivalTextfield()
         customView()
@@ -39,8 +35,8 @@ final class HomeViewContoller: UIViewController {
         customseeExpeditionsButton()
         pickerViewConfig()
         citiesConfig()
-        
     }
+    
     //MARK: - Custom Element Functions
     private func customDepartureTextfield() {
         departureTextfield.layer.cornerRadius = 16
@@ -73,6 +69,7 @@ final class HomeViewContoller: UIViewController {
         changeButton.layer.cornerRadius = changeButton.bounds.size.height / 2
         changeButton.clipsToBounds = true
     }
+    
     private func customseeExpeditionsButton() {
         seeExpeditionsButton.layer.cornerRadius = 10
         seeExpeditionsButton.layer.masksToBounds = false
@@ -94,14 +91,16 @@ final class HomeViewContoller: UIViewController {
         arrivalPickerView.dataSource = self
         arrivalPickerView.delegate = self
     }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
+    
     //MARK: - Button Actions
     
     @IBAction func seeExpeditions(_ sender: UIButton) {
-        let today = Date() 
-
+        let today = Date()
+        
          if departureTextfield.text == "" || arrivalTextField.text == "" {
              UIAlertController.alertMessage(title: "Hata", message: "Kalkış veya varış yeri girilmedi", vc: self)
          } else if arrivalTextField.text == departureTextfield.text {
@@ -117,12 +116,12 @@ final class HomeViewContoller: UIViewController {
              let dateFormatter = DateFormatter()
              dateFormatter.dateFormat = "dd/MM/yyyy" 
              findBusVC.date = dateFormatter.string(from: datePicker.date)
-             
              navigationController?.pushViewController(findBusVC, animated: true)
-             print("Next page")
+             print("Bus Service VC")
          }
     }
 }
+
 //MARK: - PickerView Extensions
 extension HomeViewContoller: UIPickerViewDelegate,UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -132,9 +131,11 @@ extension HomeViewContoller: UIPickerViewDelegate,UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return cities.count
     }
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return cities[row]
     }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == departurePickerView {
             departureTextfield.text = cities[row]
@@ -142,7 +143,6 @@ extension HomeViewContoller: UIPickerViewDelegate,UIPickerViewDataSource {
             arrivalTextField.text = cities[row]
         }
     }
-    
 }
 
 

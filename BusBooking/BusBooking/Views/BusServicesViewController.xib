@@ -25,7 +25,7 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="130"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="b7N-lX-xAb">
-                            <rect key="frame" x="48" y="51.666666666666671" width="297" height="20.333333333333329"/>
+                            <rect key="frame" x="16" y="51.666666666666671" width="361" height="20.333333333333329"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gaziantep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BY2-c4-YzI">
                                     <rect key="frame" x="0.0" y="0.0" width="82.666666666666671" height="20.333333333333332"/>
@@ -33,17 +33,20 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.left.arrow.right.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jUX-mq-TJ7">
-                                    <rect key="frame" x="147" y="0.99999999999999822" width="19.666666666666657" height="19"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.forward.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jUX-mq-TJ7">
+                                    <rect key="frame" x="170.66666666666666" y="0.99999999999999822" width="19.666666666666657" height="19"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İstanbul" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Drz-aL-bDM">
-                                    <rect key="frame" x="231" y="0.0" width="66" height="20.333333333333332"/>
+                                    <rect key="frame" x="278.33333333333331" y="0.0" width="82.666666666666686" height="20.333333333333332"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="jUX-mq-TJ7" firstAttribute="centerX" secondItem="b7N-lX-xAb" secondAttribute="centerX" id="tpU-LI-qDR"/>
+                            </constraints>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your bus route" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df5-Bh-2R2">
                             <rect key="frame" x="8" y="8.0000000000000018" width="377" height="27.666666666666671"/>
@@ -60,14 +63,15 @@
                     </subviews>
                     <color key="backgroundColor" red="0.84313726430000002" green="0.231372565" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
+                        <constraint firstItem="dcK-rq-Foh" firstAttribute="centerX" secondItem="CPy-Wb-uho" secondAttribute="centerX" id="91a-ox-hnr"/>
                         <constraint firstAttribute="trailing" secondItem="Df5-Bh-2R2" secondAttribute="trailing" constant="8" id="Knf-Yp-NW3"/>
                         <constraint firstItem="dcK-rq-Foh" firstAttribute="top" secondItem="b7N-lX-xAb" secondAttribute="bottom" constant="16" id="ZZG-ZP-ZHw"/>
                         <constraint firstAttribute="trailing" secondItem="dcK-rq-Foh" secondAttribute="trailing" constant="8" id="ipV-n4-Kfx"/>
                         <constraint firstItem="dcK-rq-Foh" firstAttribute="leading" secondItem="CPy-Wb-uho" secondAttribute="leading" constant="8" id="ma0-S2-Wow"/>
                         <constraint firstItem="Df5-Bh-2R2" firstAttribute="top" secondItem="CPy-Wb-uho" secondAttribute="top" constant="8" id="mgW-ey-0i5"/>
                         <constraint firstItem="Df5-Bh-2R2" firstAttribute="leading" secondItem="CPy-Wb-uho" secondAttribute="leading" constant="8" id="pFf-bn-kBy"/>
-                        <constraint firstAttribute="trailing" secondItem="b7N-lX-xAb" secondAttribute="trailing" constant="48" id="rZt-rD-khL"/>
-                        <constraint firstItem="b7N-lX-xAb" firstAttribute="leading" secondItem="CPy-Wb-uho" secondAttribute="leading" constant="48" id="sTq-Pj-Ysm"/>
+                        <constraint firstAttribute="trailing" secondItem="b7N-lX-xAb" secondAttribute="trailing" constant="16" id="rZt-rD-khL"/>
+                        <constraint firstItem="b7N-lX-xAb" firstAttribute="leading" secondItem="CPy-Wb-uho" secondAttribute="leading" constant="16" id="sTq-Pj-Ysm"/>
                         <constraint firstAttribute="height" constant="130" id="vKJ-Rn-Iwa"/>
                         <constraint firstItem="b7N-lX-xAb" firstAttribute="top" secondItem="Df5-Bh-2R2" secondAttribute="bottom" constant="16" id="xT5-1h-4P9"/>
                     </constraints>
@@ -93,7 +97,7 @@
                 <constraint firstItem="CPy-Wb-uho" firstAttribute="top" secondItem="EWT-Cn-Vcp" secondAttribute="top" id="7IA-s8-IGd"/>
                 <constraint firstItem="EWT-Cn-Vcp" firstAttribute="trailing" secondItem="CPy-Wb-uho" secondAttribute="trailing" id="O2i-gO-gli"/>
                 <constraint firstItem="XeN-LY-dVz" firstAttribute="leading" secondItem="EWT-Cn-Vcp" secondAttribute="leading" id="XCW-4g-SEE"/>
-                <constraint firstItem="EWT-Cn-Vcp" firstAttribute="bottom" secondItem="XeN-LY-dVz" secondAttribute="bottom" id="YGv-S7-lW0"/>
+                <constraint firstItem="CPy-Wb-uho" firstAttribute="bottom" secondItem="XeN-LY-dVz" secondAttribute="bottom" constant="-629" id="YGv-S7-lW0"/>
                 <constraint firstItem="XeN-LY-dVz" firstAttribute="top" secondItem="CPy-Wb-uho" secondAttribute="bottom" id="bvH-He-zOf"/>
                 <constraint firstItem="EWT-Cn-Vcp" firstAttribute="trailing" secondItem="XeN-LY-dVz" secondAttribute="trailing" id="nRw-6h-TA1"/>
                 <constraint firstItem="CPy-Wb-uho" firstAttribute="leading" secondItem="EWT-Cn-Vcp" secondAttribute="leading" id="ole-5G-Vnz"/>
@@ -102,6 +106,6 @@
         </view>
     </objects>
     <resources>
-        <image name="arrow.left.arrow.right.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="arrow.forward.circle.fill" catalog="system" width="128" height="123"/>
     </resources>
 </document>
