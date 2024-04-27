@@ -12,51 +12,42 @@ final class SelectSeatsViewController: UIViewController {
     @IBOutlet private weak var departureLabel: UILabel!
     @IBOutlet private weak var arrivalLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
-    //    @IBOutlet private weak var companyNameLabel: UILabel!
-    //    @IBOutlet private weak var departureTimeLabel: UILabel!
-    //    @IBOutlet private weak var arrivalTimeLabel: UILabel!
-    @IBOutlet private weak var priceLabel: UILabel!
+    
     @IBOutlet private weak var collectionView: UICollectionView!
     
     //MARK: - Variables
-    private var totalSeats = 45
-     private var recentlySoldSeats: [Int] = []
-     var departureText = String()
-     var arrivalText = String()
-     var dateText = String()
-     var selectedSeats: [Int] = []
-     var seatNumbers: [Int] = []
-     var busSeatNumDict = [Int : String]()
-     var pathWayNumber = Int()
-     var seatNum = Int()
-     static let identifier = "SelectSeatsViewController"
-     static var soldSeats: [Int] = []
-     
-     //MARK: - Lifecycle
-     override func viewDidLoad() {
-         super.viewDidLoad()
-         collectionView.register(UINib(nibName: "SeatsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SeatsCollectionViewCell")
-         collectionView.dataSource = self
-         collectionView.delegate = self
-         
-         setupBusLayout() // Oturma düzenini oluştur
-     }
-     
-     override func viewWillAppear(_ animated: Bool) {
-         super.viewWillAppear(true)
-         
-         for seat in recentlySoldSeats {
-             SelectSeatsViewController.soldSeats.append(seat)
-         }
-         recentlySoldSeats.removeAll()
-         collectionView.reloadData()
-     }
-     
-     //MARK: -
-     @IBAction func buyTickets(_ sender: Any) {
-         
-     }
+    private var totalSeats = 67
+    private var recentlySoldSeats: [Int] = []
+    var departureText = String()
+    var arrivalText = String()
+    var dateText = String()
+    var selectedSeats: [Int] = []
+    var seatNumbers: [Int] = []
+    var busSeatNumDict = [Int : String]()
+    var pathWayNumber = Int()
+    var seatNum = Int()
+    static let identifier = "SelectSeatsViewController"
+    static var soldSeats: [Int] = []
     
+    //MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionViewRegister()
+        setupBusLayout()// Oturma düzenini oluştur
+        prepareLabels()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        for seat in recentlySoldSeats {
+            SelectSeatsViewController.soldSeats.append(seat)
+        }
+        recentlySoldSeats.removeAll()
+        collectionView.reloadData()
+    }
+    
+    //MARK: - Private functions
     // Oturma düzenini oluştur
     private func setupBusLayout() {
         let seatsPerRow = 3 // Her sıradaki koltuk sayısı (2 koltuk + 1 boşluk)
@@ -80,98 +71,98 @@ final class SelectSeatsViewController: UIViewController {
             }
         }
     }
+    private func prepareLabels() {
+        departureLabel.text = departureText
+        arrivalLabel.text = arrivalText
+        dateLabel.text = dateText
+    }
+    
+    private func collectionViewRegister() {
+        collectionView.register(UINib(nibName: "SeatsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SeatsCollectionViewCell")
+    }
+    
+    //MARK: - Button Actions
+    @IBAction func buyTickets(_ sender: Any) {
+        
+    }
+}
+//MARK: -CollectionView Extensions
+extension SelectSeatsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return totalSeats
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SeatsCollectionViewCell", for: indexPath) as? SeatsCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        let seatNumber = busSeatNumDict[indexPath.row] ?? ""
+        
+        if isSold(seatNumber: indexPath.row) {
+            cell.seatImage.image = UIImage(named: "gray")
+        } else if isSelected(seatNumber: indexPath.row + 1) {
+            cell.seatImage.image = UIImage(named: "green")
+        } else {
+            cell.seatImage.image = UIImage(named: "orange")
+        }
+        
+        cell.seatLabel.text = seatNumber
+        
+        // Show or hide cell based on seat number availability
+        cell.isHidden = seatNumber.isEmpty
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let seatNumber = indexPath.row + 1
+        
+        if let cell = collectionView.cellForItem(at: indexPath) as? SeatsCollectionViewCell {
+            if cell.seatImage.image == UIImage(named: "orange") {
+                if emptySeatOperations(index: indexPath.row, seatNumber: cell.seatLabel.text ?? "") {
+                    cell.seatImage.image = UIImage(named: "green")
+                    selectedSeats.append(seatNumber)
+                    seatNumbers.append(seatNumber)
+                }
+            } else if cell.seatImage.image == UIImage(named: "gray") {
+                UIAlertController.alertMessage(title: "You can't take this seat", message: "This seat has already been purchased", vc: self)
+            } else {
+                if selectedSeatOperations(index: indexPath.row, seatNumber: cell.seatLabel.text ?? "") {
+                    cell.seatImage.image = UIImage(named: "orange")
+                    selectedSeats.removeAll(where: { $0 == seatNumber })
+                    seatNumbers.removeAll(where: { $0 == seatNumber })
+                }
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = (collectionView.bounds.width / 7) // Assuming 7 items per row
+        let height: CGFloat = width
+        return CGSize(width: width, height: height)
+    }
+}
 
- }
 
- //MARK: -CollectionView Extensions
- extension SelectSeatsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-     
-     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         totalSeats
-     }
-     
-     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SeatsCollectionViewCell", for: indexPath) as? SeatsCollectionViewCell {
-             let text = busSeatNumDict[indexPath.row]
-             
-             if isSold(seatNumber: indexPath.row) {
-                 cell.seatImage.image = UIImage(named: "gray")
-             } else if isSelected(seatNumber: indexPath.row + 1) {
-                 cell.seatImage.image = UIImage(named: "green")
-                 print(indexPath.row + 1)
-             } else {
-                 cell.seatImage.image = UIImage(named: "orange")
-             }
-             cell.seatLabel?.text = text
-             
-             if text == "" {
-                 cell.contentView.alpha = 0
-                 cell.layer.borderColor = UIColor.white.cgColor
-                 cell.isUserInteractionEnabled = false
-             }
-             return cell
-         } else {
-             return UICollectionViewCell()
-         }
-     }
-     
-     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-         guard let cell = collectionView.cellForItem(at: indexPath) as? SeatsCollectionViewCell else { return }
-
-         let seatNumber = indexPath.row + 1
-
-         if cell.seatImage.image == UIImage(named: "orange") {
-             if emptySeatOperations(index: indexPath.row, seatNumber: cell.seatLabel.text ?? "") {
-                 cell.seatImage.image = UIImage(named: "green")
-                 selectedSeats.append(seatNumber)
-                 seatNumbers.append(seatNumber)
-             }
-         } else if cell.seatImage.image == UIImage(named: "gray") {
-             UIAlertController.alertMessage(title: "AAAA", message: "AAAA", vc: self)
-         } else {
-             if selectedSeatOperations(index: indexPath.row, seatNumber: cell.seatLabel.text ?? "") {
-                 cell.seatImage.image = UIImage(named: "orange")
-                 selectedSeats.removeAll(where: { $0 == seatNumber })
-                 seatNumbers.removeAll(where: { $0 == seatNumber })
-             }
-         }
-     }
-     
-     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-         
-         let width: CGFloat = (self.view.frame.width / 7)
-         let height: CGFloat = (self.view.frame.width / 7)
-         
-         return CGSize(width: width, height: height)
-     }
-     
- }
-
- //MARK: -Select Seats ViewController Extension
+//MARK: -Select Seats ViewController Extension
 
 extension SelectSeatsViewController {
     
     private func isSold(seatNumber: Int) -> Bool {
-        for seat in SelectSeatsViewController.soldSeats {
-            if seatNumber == seat {
-                return true
-            }
-        }
-        return false
+        // Check if seatNumber exists in soldSeats array
+        return SelectSeatsViewController.soldSeats.contains(seatNumber)
     }
     
     private func isSelected(seatNumber: Int) -> Bool {
-        for seat in selectedSeats {
-            if seatNumber == seat {
-                return true
-            }
-        }
-        return false
+        // Check if seatNumber exists in selectedSeats array
+        return selectedSeats.contains(seatNumber)
     }
     
     private func emptySeatOperations(index: Int, seatNumber: String) -> Bool{
         if selectedSeats.count > 4 {
-            UIAlertController.alertMessage(title: "aa", message: "aa", vc: self)
+            UIAlertController.alertMessage(title: "You can't get more seats", message: "You can purchase a maximum of 5 seats", vc: self)
             return false
         } else {
             return true
@@ -185,4 +176,5 @@ extension SelectSeatsViewController {
         return true
     }
 }
+
 

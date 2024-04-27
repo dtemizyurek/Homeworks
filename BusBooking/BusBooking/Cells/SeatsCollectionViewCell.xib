@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngn-7L-lea">
-                        <rect key="frame" x="8" y="8" width="34" height="34"/>
+                        <rect key="frame" x="21" y="14.999999999999998" width="8.3333333333333357" height="20.333333333333329"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -30,13 +30,12 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="ngn-7L-lea" secondAttribute="trailing" constant="8" id="429-qL-IBa"/>
-                <constraint firstAttribute="bottom" secondItem="ngn-7L-lea" secondAttribute="bottom" constant="8" id="486-8G-A74"/>
-                <constraint firstItem="ngn-7L-lea" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Vef-ac-lGU"/>
-                <constraint firstItem="ngn-7L-lea" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="s0t-fz-rLK"/>
+                <constraint firstItem="ngn-7L-lea" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="RHS-7b-CRA"/>
+                <constraint firstItem="ngn-7L-lea" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ozm-fC-ggU"/>
             </constraints>
             <connections>
                 <outlet property="seatImage" destination="nor-Qd-JLg" id="SY1-uo-jL8"/>
+                <outlet property="seatLabel" destination="ngn-7L-lea" id="mpV-Si-8qy"/>
             </connections>
             <point key="canvasLocation" x="129.7709923664122" y="-11.267605633802818"/>
         </collectionViewCell>

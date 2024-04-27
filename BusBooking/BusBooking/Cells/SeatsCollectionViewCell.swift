@@ -18,5 +18,10 @@ class SeatsCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
     }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        seatLabel.text = ""
+        seatImage.image = UIImage(named: "orange")
+    }
 
 }
