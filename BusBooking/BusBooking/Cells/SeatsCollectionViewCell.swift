@@ -12,6 +12,8 @@ class SeatsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var seatImage: UIImageView!
     @IBOutlet weak var seatLabel: UILabel!
     
+    static let identifier = "SeatsCollectionViewCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

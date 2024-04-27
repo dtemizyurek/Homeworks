@@ -12,14 +12,14 @@ final class SelectSeatsViewController: UIViewController {
     @IBOutlet private weak var departureLabel: UILabel!
     @IBOutlet private weak var arrivalLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
-//    @IBOutlet private weak var companyNameLabel: UILabel!
-//    @IBOutlet private weak var departureTimeLabel: UILabel!
-//    @IBOutlet private weak var arrivalTimeLabel: UILabel!
+    //    @IBOutlet private weak var companyNameLabel: UILabel!
+    //    @IBOutlet private weak var departureTimeLabel: UILabel!
+    //    @IBOutlet private weak var arrivalTimeLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
     
     //MARK: - Variables
-    private var totalSeat = 45
+    private var totalSeats = 45
     private var recentlySoldSeats: [Int] = []
     var departureText = String()
     var arrivalText = String()
@@ -34,21 +34,86 @@ final class SelectSeatsViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        arrivalLabel.text = arrivalText
-        departureLabel.text = departureText
-        dateLabel.text = dateText
         
-    }
-    
-    private func generateBusSeatNumbers(totalSeats: Int, pathwayNumber: Int, startingSeatNumber: Int) -> [Int: String] {
-        for i in 0..<totalSeats {
-            if (i + 1) % pathwayNumber == 0 {
-                busSeatNumDict[i] = ""
+        pathWayNumber = 2
+        seatNum = 1
+        
+        for i in 0...totalSeats{
+            if i == pathWayNumber { // If it s centre, values empty to dictionary
+                if i == 52 {
+                    busSeatNumDict[i] = String(seatNum)
+                    seatNum = seatNum + 1
+                } else {
+                    busSeatNumDict[i] = ""
+                    pathWayNumber = pathWayNumber + 5 // Position empty - 2,7,12,17,22 ...... like that
+                }
             } else {
                 busSeatNumDict[i] = String(seatNum)
-                seatNum += 1
+                seatNum = seatNum + 1
             }
         }
-        return busSeatNumDict
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        for seat in recentlySoldSeats {
+            SelectSeatsViewController.soldSeats.append(seat)
+        }
+        recentlySoldSeats.removeAll()
+        collectionView.reloadData()
+    }
+    
+    //MARK: -
+    @IBAction func buyTickets(_ sender: Any) {
+        
+    }
+}
+
+//MARK: -CollectionView Extensions
+extension SelectSeatsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        totalSeats
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SeatsCollectionViewCell.identifier, for: indexPath) as? SeatsCollectionViewCell {
+            let text = busSeatNumDict[indexPath.row]
+            
+            if isSold(seatNumber: indexPath.row){
+                cell.seatImage.image = UIImage(named: "gray")
+            } else if isSelected(seatNumber: indexPath.row + 1) {
+                cell.seatImage.image = UIImage(named: "green")
+                print(indexPath.row + 1)
+            } else {
+                cell.seatImage.image = UIImage(named: "orange")
+            }
+            
+        }
+        return UICollectionViewCell()
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        <#code#>
+    }
+}
+
+extension SelectSeatsViewController {
+
+    private func isSold(seatNumber: Int) -> Bool {
+        for seat in SelectSeatsViewController.soldSeats {
+            if seatNumber == seat {
+                return true
+            }
+        }
+        return false
+    }
+    
+    private func isSelected(seatNumber: Int) -> Bool {
+        for seat in selectedSeats {
+            if seatNumber == seat {
+                return true
+            }
+        }
+        return false
     }
 }
