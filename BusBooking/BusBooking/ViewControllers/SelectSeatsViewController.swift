@@ -50,7 +50,7 @@ final class SelectSeatsViewController: UIViewController {
     //MARK: - Private functions
     // Oturma düzenini oluştur
     private func setupBusLayout() {
-        let seatsPerRow = 3 // Her sıradaki koltuk sayısı (2 koltuk + 1 boşluk)
+        let seatsPerRow = 6 // Her sıradaki koltuk sayısı (2 koltuk + 2 boşluk + 2 koltuk)
         let totalRows = Int(ceil(Double(totalSeats) / Double(seatsPerRow))) // Toplam satır sayısı
         
         var seatNum = 1
@@ -59,8 +59,8 @@ final class SelectSeatsViewController: UIViewController {
             for col in 0..<seatsPerRow {
                 let seatIndex = row * seatsPerRow + col
                 if seatIndex < totalSeats {
-                    if col % 3 == 2 {
-                        // Her iki koltuğun arasında bir boşluk olacak
+                    if col % 6 == 2 || col % 6 == 3 {
+                        // Her iki koltuğun arasına iki boşluk olacak
                         busSeatNumDict[seatIndex] = ""
                     } else {
                         // Koridor dışındaki koltuklarda
@@ -71,6 +71,7 @@ final class SelectSeatsViewController: UIViewController {
             }
         }
     }
+
     private func prepareLabels() {
         departureLabel.text = departureText
         arrivalLabel.text = arrivalText
