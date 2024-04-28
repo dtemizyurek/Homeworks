@@ -15,6 +15,9 @@
 		450F298D2BDE86F400DE043B /* PassengerInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 450F298B2BDE86F400DE043B /* PassengerInfoViewController.xib */; };
 		450F29902BDE953200DE043B /* PassengerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450F298E2BDE953200DE043B /* PassengerCollectionViewCell.swift */; };
 		450F29912BDE953200DE043B /* PassengerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 450F298F2BDE953200DE043B /* PassengerCollectionViewCell.xib */; };
+		450F29942BDED00400DE043B /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 450F29932BDED00400DE043B /* IQKeyboardManagerSwift */; };
+		450F29972BDEED2400DE043B /* ShowTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450F29952BDEED2400DE043B /* ShowTicketViewController.swift */; };
+		450F29982BDEED2400DE043B /* ShowTicketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 450F29962BDEED2400DE043B /* ShowTicketViewController.xib */; };
 		4588BA802BDA69C200AFE8ED /* BusServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588BA7E2BDA69C200AFE8ED /* BusServicesViewController.swift */; };
 		4588BA812BDA69C300AFE8ED /* BusServicesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4588BA7F2BDA69C200AFE8ED /* BusServicesViewController.xib */; };
 		4588BA852BDA705B00AFE8ED /* RoutesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588BA832BDA705B00AFE8ED /* RoutesCollectionViewCell.swift */; };
@@ -43,6 +46,8 @@
 		450F298B2BDE86F400DE043B /* PassengerInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassengerInfoViewController.xib; sourceTree = "<group>"; };
 		450F298E2BDE953200DE043B /* PassengerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerCollectionViewCell.swift; sourceTree = "<group>"; };
 		450F298F2BDE953200DE043B /* PassengerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassengerCollectionViewCell.xib; sourceTree = "<group>"; };
+		450F29952BDEED2400DE043B /* ShowTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTicketViewController.swift; sourceTree = "<group>"; };
+		450F29962BDEED2400DE043B /* ShowTicketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowTicketViewController.xib; sourceTree = "<group>"; };
 		4588BA7E2BDA69C200AFE8ED /* BusServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusServicesViewController.swift; sourceTree = "<group>"; };
 		4588BA7F2BDA69C200AFE8ED /* BusServicesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusServicesViewController.xib; sourceTree = "<group>"; };
 		4588BA832BDA705B00AFE8ED /* RoutesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -69,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				450F29942BDED00400DE043B /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +109,7 @@
 				4588BA7F2BDA69C200AFE8ED /* BusServicesViewController.xib */,
 				450C0F492BDBCD520016FDE5 /* SelectSeatsViewController.xib */,
 				450F298B2BDE86F400DE043B /* PassengerInfoViewController.xib */,
+				450F29962BDEED2400DE043B /* ShowTicketViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -114,6 +121,7 @@
 				4588BA7E2BDA69C200AFE8ED /* BusServicesViewController.swift */,
 				450C0F482BDBCD520016FDE5 /* SelectSeatsViewController.swift */,
 				450F298A2BDE86F400DE043B /* PassengerInfoViewController.swift */,
+				450F29952BDEED2400DE043B /* ShowTicketViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -180,6 +188,9 @@
 			dependencies = (
 			);
 			name = BusBooking;
+			packageProductDependencies = (
+				450F29932BDED00400DE043B /* IQKeyboardManagerSwift */,
+			);
 			productName = BusBooking;
 			productReference = 45B876A32BD3FD7E00650797 /* BusBooking.app */;
 			productType = "com.apple.product-type.application";
@@ -208,6 +219,9 @@
 				Base,
 			);
 			mainGroup = 45B8769A2BD3FD7E00650797;
+			packageReferences = (
+				450F29922BDED00400DE043B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 45B876A42BD3FD7E00650797 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -225,6 +239,7 @@
 				4588BA862BDA705B00AFE8ED /* RoutesCollectionViewCell.xib in Resources */,
 				450C0F472BDBC9600016FDE5 /* SeatsCollectionViewCell.xib in Resources */,
 				45B876B32BD3FD7F00650797 /* LaunchScreen.storyboard in Resources */,
+				450F29982BDEED2400DE043B /* ShowTicketViewController.xib in Resources */,
 				450F29912BDE953200DE043B /* PassengerCollectionViewCell.xib in Resources */,
 				450F298D2BDE86F400DE043B /* PassengerInfoViewController.xib in Resources */,
 				45B876B02BD3FD7F00650797 /* Assets.xcassets in Resources */,
@@ -257,6 +272,7 @@
 				450F298C2BDE86F400DE043B /* PassengerInfoViewController.swift in Sources */,
 				45B876A92BD3FD7E00650797 /* SceneDelegate.swift in Sources */,
 				45B876BE2BD3FE1000650797 /* GiveInformationProtocol.swift in Sources */,
+				450F29972BDEED2400DE043B /* ShowTicketViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +432,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,6 +461,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -479,6 +497,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		450F29922BDED00400DE043B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		450F29932BDED00400DE043B /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 450F29922BDED00400DE043B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 45B8769B2BD3FD7E00650797 /* Project object */;
 }

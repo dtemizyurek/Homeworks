@@ -53,7 +53,8 @@ final class PassengerInfoViewController: UIViewController {
     }
     
     @IBAction func seeDetailsButton(_ sender: Any) {
-        
+       let showTicketVC = ShowTicketViewController()
+        navigationController?.pushViewController(showTicketVC, animated: true)
     }
     
 }
@@ -78,6 +79,7 @@ extension PassengerInfoViewController: UICollectionViewDelegate, UICollectionVie
         passengerId = uuidStrings
         cell.idTextField.text = uuidStrings[indexPath.row]
         cell.idTextField.isUserInteractionEnabled = false
+        cell.passengerNoTextField.isUserInteractionEnabled = false
         cell.passengerNoTextField.delegate = self
         
         return cell
