@@ -53,9 +53,17 @@ final class PassengerInfoViewController: UIViewController {
     }
     
     @IBAction func seeDetailsButton(_ sender: Any) {
-       let showTicketVC = ShowTicketViewController()
-        navigationController?.pushViewController(showTicketVC, animated: true)
-    }
+        let showTicketVC = ShowTicketViewController()
+        
+        // Verileri aktar
+        showTicketVC.departure = departure
+        showTicketVC.arrival = arrival
+        showTicketVC.date = date
+        showTicketVC.selectedSeatNumbers = selectedSeats
+        showTicketVC.person = "\(selectedSeats.count) Person"
+        
+        showTicketVC.reservationNo = passengerId.first ?? "AAA"
+        navigationController?.pushViewController(showTicketVC, animated: true)    }
     
 }
 //MARK: - CollectionView Extensions

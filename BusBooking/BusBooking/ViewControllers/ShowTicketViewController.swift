@@ -25,6 +25,14 @@ final class ShowTicketViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLabels()
     }
-
+    private func setupLabels() {
+           departureLabel.text = departure
+           arrivalLabel.text = arrival
+           dateLabel.text = date
+           numberOfPersonLabel.text = person
+           reservationNoLabel.text = reservationNo
+           seatNumbers.text = (selectedSeatNumbers.map { String($0) }.joined(separator: ", "))
+       }
 }
