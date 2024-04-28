@@ -77,8 +77,11 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NUF-iQ-CjS">
-                    <rect key="frame" x="0.0" y="189" width="393" height="629"/>
+                    <rect key="frame" x="0.0" y="189" width="393" height="550"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="550" id="Wf5-xV-uVI"/>
+                    </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fhl-F7-BqY">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -90,19 +93,31 @@
                         <outlet property="delegate" destination="-1" id="xPd-S1-0Uw"/>
                     </connections>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKL-7H-vmi">
+                    <rect key="frame" x="32" y="746" width="329" height="34.333333333333371"/>
+                    <color key="backgroundColor" red="0.84313726430000002" green="0.231372565" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="See Details"/>
+                    <connections>
+                        <action selector="seeDetailsButton:" destination="-1" eventType="touchUpInside" id="nHm-jZ-C9E"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.89803922179999995" green="0.89803922179999995" blue="0.89803922179999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="NUF-iQ-CjS" firstAttribute="top" secondItem="hxo-fs-cc3" secondAttribute="bottom" id="1mu-Qu-XHL"/>
                 <constraint firstItem="hxo-fs-cc3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="8VC-io-OZC"/>
                 <constraint firstItem="hxo-fs-cc3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Cp9-UI-TM5"/>
                 <constraint firstItem="hxo-fs-cc3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="aCY-1O-L1D"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NUF-iQ-CjS" secondAttribute="trailing" id="n5i-uJ-Jnb"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NUF-iQ-CjS" secondAttribute="bottom" id="nU1-Jn-a60"/>
-                <constraint firstItem="NUF-iQ-CjS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="oOG-dM-NTf"/>
+                <constraint firstItem="NUF-iQ-CjS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="goN-ta-Q8K"/>
+                <constraint firstItem="NUF-iQ-CjS" firstAttribute="top" secondItem="hxo-fs-cc3" secondAttribute="bottom" id="gty-uM-yWh"/>
+                <constraint firstItem="NUF-iQ-CjS" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="hnh-Co-54z"/>
+                <constraint firstItem="vKL-7H-vmi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="i2f-Fw-7DW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vKL-7H-vmi" secondAttribute="trailing" constant="32" id="qOS-NK-5w7"/>
+                <constraint firstItem="vKL-7H-vmi" firstAttribute="top" secondItem="NUF-iQ-CjS" secondAttribute="bottom" constant="8" id="v13-pw-efh"/>
             </constraints>
-            <point key="canvasLocation" x="12" y="-11"/>
+            <point key="canvasLocation" x="11.450381679389313" y="-11.267605633802818"/>
         </view>
     </objects>
     <resources>

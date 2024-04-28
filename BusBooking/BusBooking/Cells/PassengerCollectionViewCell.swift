@@ -9,9 +9,10 @@ import UIKit
 
 class PassengerCollectionViewCell: UICollectionViewCell {
     //MARK: -IBOutlets
-    @IBOutlet private weak var nameTextField: UITextField!
-    @IBOutlet private weak var surNameTextField: UITextField!
-    @IBOutlet private weak var idTextField: UITextField!
+    @IBOutlet weak var passengerNoTextField: UITextField!
+    @IBOutlet weak var passengerNameTextField: UITextField!
+    @IBOutlet weak var idTextField: UITextField!
+    @IBOutlet weak var seatNoTextField: UITextField!
     @IBOutlet weak var view: UIView!
     //MARK: - Variables
     static let identifier = "PassengerCollectionViewCell"
@@ -29,9 +30,9 @@ class PassengerCollectionViewCell: UICollectionViewCell {
     }
     
     //MARK: - Configure Method
-    private func configure(with passenger: Passenger) {
-        nameTextField.text = passenger.name
-        surNameTextField.text = passenger.surname
+     func configure(with passenger: Passenger) {
+        passengerNoTextField.text = passenger.name
+        passengerNameTextField.text = passenger.surname
         idTextField.text = String(passenger.id)
     }
 
