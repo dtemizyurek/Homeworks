@@ -12,14 +12,20 @@ class PassengerCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var surNameTextField: UITextField!
     @IBOutlet private weak var idTextField: UITextField!
-    
-     //MARK: - Variables
+    @IBOutlet weak var view: UIView!
+    //MARK: - Variables
     static let identifier = "PassengerCollectionViewCell"
     
     //MARK: - awakeFromNib()
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        customView()
+    }
+    
+    private func customView() {
+        view.layer.cornerRadius = 10
+        view.layer.masksToBounds = true
+
     }
     
     //MARK: - Configure Method

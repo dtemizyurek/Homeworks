@@ -4,13 +4,13 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PassengerInfoViewController" customModule="BusBooking" customModuleProvider="target">
             <connections>
                 <outlet property="arrivalLabel" destination="DKN-XS-LhQ" id="XEg-t8-Q0N"/>
+                <outlet property="collectionView" destination="NUF-iQ-CjS" id="XoE-LT-jNg"/>
                 <outlet property="dateLabel" destination="xSI-zr-4ej" id="3wL-e3-11s"/>
                 <outlet property="departureLabel" destination="CgT-pI-N7v" id="73r-yT-fxB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -78,17 +78,21 @@
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NUF-iQ-CjS">
                     <rect key="frame" x="0.0" y="189" width="393" height="629"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fhl-F7-BqY">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="g5v-L6-YVi"/>
+                        <outlet property="delegate" destination="-1" id="xPd-S1-0Uw"/>
+                    </connections>
                 </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" red="0.89803922179999995" green="0.89803922179999995" blue="0.89803922179999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="NUF-iQ-CjS" firstAttribute="top" secondItem="hxo-fs-cc3" secondAttribute="bottom" id="1mu-Qu-XHL"/>
                 <constraint firstItem="hxo-fs-cc3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="8VC-io-OZC"/>
@@ -103,8 +107,5 @@
     </objects>
     <resources>
         <image name="arrow.forward.circle.fill" catalog="system" width="128" height="123"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

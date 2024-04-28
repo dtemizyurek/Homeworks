@@ -105,6 +105,7 @@
                 <outlet property="idTextField" destination="WeT-wk-gS4" id="HGi-By-twM"/>
                 <outlet property="nameTextField" destination="Nzg-UD-eC5" id="KpG-J7-F4E"/>
                 <outlet property="surNameTextField" destination="4sb-dW-7Ur" id="qkM-Kb-VCp"/>
+                <outlet property="view" destination="8i9-aN-6Mf" id="bN4-9Y-sRB"/>
             </connections>
             <point key="canvasLocation" x="389.3129770992366" y="35.91549295774648"/>
         </collectionViewCell>

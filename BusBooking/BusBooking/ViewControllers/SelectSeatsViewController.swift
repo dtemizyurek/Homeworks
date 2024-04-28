@@ -71,7 +71,7 @@ final class SelectSeatsViewController: UIViewController {
             }
         }
     }
-
+    
     private func prepareLabels() {
         departureLabel.text = departureText
         arrivalLabel.text = arrivalText
@@ -88,15 +88,17 @@ final class SelectSeatsViewController: UIViewController {
         if selectedSeats.count == 0 {
             UIAlertController.alertMessage(title: "You did not choose a seat", message: "Please choose a seat", vc: self)
         } else {
-            UserDefaults.standard.set(selectedSeats, forKey: "selectedSeats")
+            let buyingSeatArray = UserDefaults.standard.array(forKey: "buyingSeatArray")
             passengerInfoVC.arrival = self.arrivalText
             passengerInfoVC.departure = self.departureText
             passengerInfoVC.date = self.dateText
+            passengerInfoVC.selectedSeats = self.selectedSeats
             navigationController?.pushViewController(passengerInfoVC, animated: true)
             
         }
     }
 }
+
 //MARK: -CollectionView Extensions
 extension SelectSeatsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
