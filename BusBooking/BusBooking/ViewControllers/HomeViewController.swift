@@ -34,7 +34,12 @@ final class HomeViewContoller: UIViewController {
         customChangeButton()
         customseeExpeditionsButton()
         pickerViewConfig()
+        addDoneButtonToPickerView()
         citiesConfig()
+        navigationController?.navigationBar.tintColor = .red
+        
+        datePicker.datePickerMode = .date
+        datePicker.tintColor = .red
     }
     
     //MARK: - Custom Element Functions
@@ -92,6 +97,22 @@ final class HomeViewContoller: UIViewController {
         arrivalPickerView.delegate = self
     }
     
+    private func addDoneButtonToPickerView() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
+        doneButton.tintColor = .red
+        toolbar.setItems([doneButton], animated: true)
+        departureTextfield.inputAccessoryView = toolbar
+        arrivalTextField.inputAccessoryView = toolbar
+    }
+    
+    @objc private func doneButtonTapped() {
+        view.endEditing(true) // Klavyeyi kapat
+    }
+    
+    
+    //MARK: - Override func
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
@@ -101,24 +122,24 @@ final class HomeViewContoller: UIViewController {
     @IBAction func seeExpeditions(_ sender: UIButton) {
         let today = Date()
         
-         if departureTextfield.text == "" || arrivalTextField.text == "" {
-             UIAlertController.alertMessage(title: "Hata", message: "Kalkış veya varış yeri girilmedi", vc: self)
-         } else if arrivalTextField.text == departureTextfield.text {
-             UIAlertController.alertMessage(title: "Hata", message: "Aynı şehirler arası gidemezsiniz", vc: self)
-         } else if datePicker.date == datePicker.minimumDate {
-             UIAlertController.alertMessage(title: "Hata", message: "Lütfen bir tarih seçin", vc: self)
-         } else if datePicker.date < today || datePicker.date == today {
-             UIAlertController.alertMessage(title: "Hata", message: "Geçmiş bir tarih seçtiniz, lütfen geçerli bir tarih seçin", vc: self)
-         } else {
-             let findBusVC = BusServicesViewController(nibName: BusServicesViewController.identifier, bundle: nil)
-             findBusVC.departure = departureTextfield.text ?? "Belirtilmemiş"
-             findBusVC.arrival = arrivalTextField.text ?? "Belirtilmemiş"
-             let dateFormatter = DateFormatter()
-             dateFormatter.dateFormat = "dd/MM/yyyy" 
-             findBusVC.date = dateFormatter.string(from: datePicker.date)
-             navigationController?.pushViewController(findBusVC, animated: true)
-             print("Bus Service VC")
-         }
+        if departureTextfield.text == "" || arrivalTextField.text == "" {
+            UIAlertController.alertMessage(title: "Hata", message: "No departure or destination entered", vc: self)
+        } else if arrivalTextField.text == departureTextfield.text {
+            UIAlertController.alertMessage(title: "Hata", message: "You cannot travel between the same cities", vc: self)
+        } else if datePicker.date == datePicker.minimumDate {
+            UIAlertController.alertMessage(title: "Hata", message: "Please select a date", vc: self)
+        } else if datePicker.date < today || datePicker.date == today {
+            UIAlertController.alertMessage(title: "Hata", message: "You have selected a past date, please select a current date", vc: self)
+        } else {
+            let findBusVC = BusServicesViewController(nibName: BusServicesViewController.identifier, bundle: nil)
+            findBusVC.departure = departureTextfield.text ?? "Belirtilmemiş"
+            findBusVC.arrival = arrivalTextField.text ?? "Belirtilmemiş"
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            findBusVC.date = dateFormatter.string(from: datePicker.date)
+            navigationController?.pushViewController(findBusVC, animated: true)
+            print("Bus Service VC")
+        }
     }
 }
 

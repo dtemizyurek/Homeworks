@@ -74,17 +74,17 @@
                                     <constraint firstItem="785-mh-YGw" firstAttribute="centerX" secondItem="VTg-VC-rXX" secondAttribute="centerX" id="ctW-DQ-fJC"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="9SS-dD-fpJ">
-                                <rect key="frame" x="104" y="90" width="238" height="20.333333333333329"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="9SS-dD-fpJ">
+                                <rect key="frame" x="112" y="90" width="222" height="20.333333333333329"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Gaziantep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8b-MC-p3g">
-                                        <rect key="frame" x="0.0" y="0.0" width="94" height="20.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İstanbul" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6J-3i-DDR">
-                                        <rect key="frame" x="174" y="0.0" width="64" height="20.333333333333332"/>
+                                        <rect key="frame" x="158" y="0.0" width="64" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -98,8 +98,8 @@
                             <constraint firstItem="pbU-UN-kt5" firstAttribute="top" secondItem="zNj-1C-TbO" secondAttribute="top" constant="8" id="B4e-PN-hJM"/>
                             <constraint firstItem="VTg-VC-rXX" firstAttribute="top" secondItem="pbU-UN-kt5" secondAttribute="bottom" constant="8" id="PGO-a9-R5H"/>
                             <constraint firstItem="pbU-UN-kt5" firstAttribute="leading" secondItem="4I9-uV-Yj4" secondAttribute="trailing" constant="8" id="ReK-pR-ZsY"/>
-                            <constraint firstAttribute="trailing" secondItem="9SS-dD-fpJ" secondAttribute="trailing" constant="8" id="YO0-s0-TEc"/>
-                            <constraint firstItem="9SS-dD-fpJ" firstAttribute="leading" secondItem="4I9-uV-Yj4" secondAttribute="trailing" constant="8" id="dKi-V8-jmB"/>
+                            <constraint firstAttribute="trailing" secondItem="9SS-dD-fpJ" secondAttribute="trailing" constant="16" id="YO0-s0-TEc"/>
+                            <constraint firstItem="9SS-dD-fpJ" firstAttribute="leading" secondItem="4I9-uV-Yj4" secondAttribute="trailing" constant="16" id="dKi-V8-jmB"/>
                             <constraint firstItem="VTg-VC-rXX" firstAttribute="leading" secondItem="4I9-uV-Yj4" secondAttribute="trailing" constant="16" id="fPu-6h-0Lx"/>
                             <constraint firstAttribute="trailing" secondItem="pbU-UN-kt5" secondAttribute="trailing" constant="8" id="jMA-QW-1IB"/>
                             <constraint firstItem="4I9-uV-Yj4" firstAttribute="leading" secondItem="zNj-1C-TbO" secondAttribute="leading" constant="8" id="ktx-aA-EGf"/>

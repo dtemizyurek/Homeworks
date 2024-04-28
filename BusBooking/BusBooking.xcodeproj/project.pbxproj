@@ -11,6 +11,10 @@
 		450C0F472BDBC9600016FDE5 /* SeatsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 450C0F452BDBC9600016FDE5 /* SeatsCollectionViewCell.xib */; };
 		450C0F4A2BDBCD520016FDE5 /* SelectSeatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C0F482BDBCD520016FDE5 /* SelectSeatsViewController.swift */; };
 		450C0F4B2BDBCD520016FDE5 /* SelectSeatsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 450C0F492BDBCD520016FDE5 /* SelectSeatsViewController.xib */; };
+		450F298C2BDE86F400DE043B /* PassengerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450F298A2BDE86F400DE043B /* PassengerInfoViewController.swift */; };
+		450F298D2BDE86F400DE043B /* PassengerInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 450F298B2BDE86F400DE043B /* PassengerInfoViewController.xib */; };
+		450F29902BDE953200DE043B /* PassengerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450F298E2BDE953200DE043B /* PassengerCollectionViewCell.swift */; };
+		450F29912BDE953200DE043B /* PassengerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 450F298F2BDE953200DE043B /* PassengerCollectionViewCell.xib */; };
 		4588BA802BDA69C200AFE8ED /* BusServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588BA7E2BDA69C200AFE8ED /* BusServicesViewController.swift */; };
 		4588BA812BDA69C300AFE8ED /* BusServicesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4588BA7F2BDA69C200AFE8ED /* BusServicesViewController.xib */; };
 		4588BA852BDA705B00AFE8ED /* RoutesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588BA832BDA705B00AFE8ED /* RoutesCollectionViewCell.swift */; };
@@ -35,6 +39,10 @@
 		450C0F452BDBC9600016FDE5 /* SeatsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeatsCollectionViewCell.xib; sourceTree = "<group>"; };
 		450C0F482BDBCD520016FDE5 /* SelectSeatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSeatsViewController.swift; sourceTree = "<group>"; };
 		450C0F492BDBCD520016FDE5 /* SelectSeatsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectSeatsViewController.xib; sourceTree = "<group>"; };
+		450F298A2BDE86F400DE043B /* PassengerInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerInfoViewController.swift; sourceTree = "<group>"; };
+		450F298B2BDE86F400DE043B /* PassengerInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassengerInfoViewController.xib; sourceTree = "<group>"; };
+		450F298E2BDE953200DE043B /* PassengerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerCollectionViewCell.swift; sourceTree = "<group>"; };
+		450F298F2BDE953200DE043B /* PassengerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassengerCollectionViewCell.xib; sourceTree = "<group>"; };
 		4588BA7E2BDA69C200AFE8ED /* BusServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusServicesViewController.swift; sourceTree = "<group>"; };
 		4588BA7F2BDA69C200AFE8ED /* BusServicesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusServicesViewController.xib; sourceTree = "<group>"; };
 		4588BA832BDA705B00AFE8ED /* RoutesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -74,6 +82,8 @@
 				4588BA842BDA705B00AFE8ED /* RoutesCollectionViewCell.xib */,
 				450C0F442BDBC9600016FDE5 /* SeatsCollectionViewCell.swift */,
 				450C0F452BDBC9600016FDE5 /* SeatsCollectionViewCell.xib */,
+				450F298E2BDE953200DE043B /* PassengerCollectionViewCell.swift */,
+				450F298F2BDE953200DE043B /* PassengerCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -92,6 +102,7 @@
 				45B876AC2BD3FD7E00650797 /* Main.storyboard */,
 				4588BA7F2BDA69C200AFE8ED /* BusServicesViewController.xib */,
 				450C0F492BDBCD520016FDE5 /* SelectSeatsViewController.xib */,
+				450F298B2BDE86F400DE043B /* PassengerInfoViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -102,6 +113,7 @@
 				45B876AA2BD3FD7E00650797 /* HomeViewController.swift */,
 				4588BA7E2BDA69C200AFE8ED /* BusServicesViewController.swift */,
 				450C0F482BDBCD520016FDE5 /* SelectSeatsViewController.swift */,
+				450F298A2BDE86F400DE043B /* PassengerInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -213,6 +225,8 @@
 				4588BA862BDA705B00AFE8ED /* RoutesCollectionViewCell.xib in Resources */,
 				450C0F472BDBC9600016FDE5 /* SeatsCollectionViewCell.xib in Resources */,
 				45B876B32BD3FD7F00650797 /* LaunchScreen.storyboard in Resources */,
+				450F29912BDE953200DE043B /* PassengerCollectionViewCell.xib in Resources */,
+				450F298D2BDE86F400DE043B /* PassengerInfoViewController.xib in Resources */,
 				45B876B02BD3FD7F00650797 /* Assets.xcassets in Resources */,
 				450C0F4B2BDBCD520016FDE5 /* SelectSeatsViewController.xib in Resources */,
 				45B876AE2BD3FD7E00650797 /* Main.storyboard in Resources */,
@@ -228,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				458FC82C2BD85FA300E91C87 /* AlertExtension.swift in Sources */,
+				450F29902BDE953200DE043B /* PassengerCollectionViewCell.swift in Sources */,
 				45B876AB2BD3FD7E00650797 /* HomeViewController.swift in Sources */,
 				45B876C02BD3FF0500650797 /* Date.swift in Sources */,
 				45B876C22BD3FFED00650797 /* Time.swift in Sources */,
@@ -239,6 +254,7 @@
 				45B876BC2BD3FDD200650797 /* Passenger.swift in Sources */,
 				450C0F462BDBC9600016FDE5 /* SeatsCollectionViewCell.swift in Sources */,
 				450C0F4A2BDBCD520016FDE5 /* SelectSeatsViewController.swift in Sources */,
+				450F298C2BDE86F400DE043B /* PassengerInfoViewController.swift in Sources */,
 				45B876A92BD3FD7E00650797 /* SceneDelegate.swift in Sources */,
 				45B876BE2BD3FE1000650797 /* GiveInformationProtocol.swift in Sources */,
 			);

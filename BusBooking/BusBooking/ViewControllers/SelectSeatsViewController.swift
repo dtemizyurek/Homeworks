@@ -35,6 +35,7 @@ final class SelectSeatsViewController: UIViewController {
         collectionViewRegister()
         setupBusLayout()// Oturma düzenini oluştur
         prepareLabels()
+        UIAlertController.alertMessage(title: "Scroll the screen", message: "Scroll the screen to select a seat and choose one of the available seats", vc: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,7 +53,6 @@ final class SelectSeatsViewController: UIViewController {
     private func setupBusLayout() {
         let seatsPerRow = 6 // Her sıradaki koltuk sayısı (2 koltuk + 2 boşluk + 2 koltuk)
         let totalRows = Int(ceil(Double(totalSeats) / Double(seatsPerRow))) // Toplam satır sayısı
-        
         var seatNum = 1
         
         for row in 0..<totalRows {
@@ -60,7 +60,7 @@ final class SelectSeatsViewController: UIViewController {
                 let seatIndex = row * seatsPerRow + col
                 if seatIndex < totalSeats {
                     if col % 6 == 2 || col % 6 == 3 {
-                        // Her iki koltuğun arasına iki boşluk olacak
+                        // Her iki koltuğun arasına üç boşluk olacak
                         busSeatNumDict[seatIndex] = ""
                     } else {
                         // Koridor dışındaki koltuklarda
@@ -84,7 +84,17 @@ final class SelectSeatsViewController: UIViewController {
     
     //MARK: - Button Actions
     @IBAction func buyTickets(_ sender: Any) {
-        
+        let passengerInfoVC = PassengerInfoViewController(nibName: PassengerInfoViewController.identifier, bundle: nil)
+        if selectedSeats.count == 0 {
+            UIAlertController.alertMessage(title: "You did not choose a seat", message: "Please choose a seat", vc: self)
+        } else {
+            UserDefaults.standard.set(selectedSeats, forKey: "selectedSeats")
+            passengerInfoVC.arrival = self.arrivalText
+            passengerInfoVC.departure = self.departureText
+            passengerInfoVC.date = self.dateText
+            navigationController?.pushViewController(passengerInfoVC, animated: true)
+            
+        }
     }
 }
 //MARK: -CollectionView Extensions
@@ -147,17 +157,15 @@ extension SelectSeatsViewController: UICollectionViewDelegate, UICollectionViewD
 }
 
 
-//MARK: -Select Seats ViewController Extension
+//MARK: - Select Seats ViewController Extension
 
 extension SelectSeatsViewController {
     
     private func isSold(seatNumber: Int) -> Bool {
-        // Check if seatNumber exists in soldSeats array
         return SelectSeatsViewController.soldSeats.contains(seatNumber)
     }
     
     private func isSelected(seatNumber: Int) -> Bool {
-        // Check if seatNumber exists in selectedSeats array
         return selectedSeats.contains(seatNumber)
     }
     

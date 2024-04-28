@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PassengerCollectionViewCell" customModule="BusBooking" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="380" height="186"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="380" height="186"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8i9-aN-6Mf">
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="186"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Z30-BX-mP8">
+                                <rect key="frame" x="8" y="8.0000000000000036" width="364" height="48.333333333333343"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yolcu Adı" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmX-er-mqt">
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <color key="textColor" red="0.84313726430000002" green="0.231372565" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="746" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter the passenger name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nzg-UD-eC5">
+                                        <rect key="frame" x="0.0" y="23.333333333333329" width="364" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="vN3-QJ-EWq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ZjF-U8-Spn">
+                                <rect key="frame" x="8" y="64.333333333333329" width="364" height="48.333333333333329"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yolcu Soyadı" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7c-Rk-FZi">
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <color key="textColor" red="0.84313726430000002" green="0.231372565" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter the passenger surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4sb-dW-7Ur">
+                                        <rect key="frame" x="0.0" y="23.333333333333343" width="364" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="9oJ-iw-kj3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Knt-Rn-qYK">
+                                <rect key="frame" x="8" y="120.66666666666667" width="364" height="48.333333333333329"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TC Kimlik Numarası" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoU-VY-76M">
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <color key="textColor" red="0.84313726430000002" green="0.231372565" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="please enter the passenger's TC ID number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WeT-wk-gS4">
+                                        <rect key="frame" x="0.0" y="23.333333333333329" width="364" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="Vgw-pA-dHM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Knt-Rn-qYK" firstAttribute="leading" secondItem="8i9-aN-6Mf" secondAttribute="leading" constant="8" id="0Gx-Ou-RrO"/>
+                            <constraint firstAttribute="trailing" secondItem="Z30-BX-mP8" secondAttribute="trailing" constant="8" id="7az-q8-juI"/>
+                            <constraint firstAttribute="trailing" secondItem="Knt-Rn-qYK" secondAttribute="trailing" constant="8" id="T9m-jN-9xe"/>
+                            <constraint firstItem="Z30-BX-mP8" firstAttribute="top" secondItem="8i9-aN-6Mf" secondAttribute="top" constant="8" id="Zsk-hP-DIn"/>
+                            <constraint firstItem="ZjF-U8-Spn" firstAttribute="leading" secondItem="8i9-aN-6Mf" secondAttribute="leading" constant="8" id="aYW-MN-NN5"/>
+                            <constraint firstItem="Z30-BX-mP8" firstAttribute="leading" secondItem="8i9-aN-6Mf" secondAttribute="leading" constant="8" id="d5F-vw-pCo"/>
+                            <constraint firstAttribute="trailing" secondItem="ZjF-U8-Spn" secondAttribute="trailing" constant="8" id="hhd-Ma-7gY"/>
+                            <constraint firstItem="Knt-Rn-qYK" firstAttribute="top" secondItem="ZjF-U8-Spn" secondAttribute="bottom" constant="8" id="knF-MU-bHa"/>
+                            <constraint firstItem="ZjF-U8-Spn" firstAttribute="top" secondItem="Z30-BX-mP8" secondAttribute="bottom" constant="8" id="pki-xZ-Naf"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="8i9-aN-6Mf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0Jf-Gu-87P"/>
+                <constraint firstAttribute="bottom" secondItem="8i9-aN-6Mf" secondAttribute="bottom" id="Nry-wr-uf6"/>
+                <constraint firstItem="8i9-aN-6Mf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Unq-Fm-rOU"/>
+                <constraint firstAttribute="trailing" secondItem="8i9-aN-6Mf" secondAttribute="trailing" id="Xve-ge-9ZY"/>
+            </constraints>
+            <size key="customSize" width="390" height="184"/>
+            <connections>
+                <outlet property="idTextField" destination="WeT-wk-gS4" id="HGi-By-twM"/>
+                <outlet property="nameTextField" destination="Nzg-UD-eC5" id="KpG-J7-F4E"/>
+                <outlet property="surNameTextField" destination="4sb-dW-7Ur" id="qkM-Kb-VCp"/>
+            </connections>
+            <point key="canvasLocation" x="389.3129770992366" y="35.91549295774648"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
