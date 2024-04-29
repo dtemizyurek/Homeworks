@@ -16,6 +16,7 @@
 - ✅ Following same styling in every file
 
 ## ScreenShots
-![First Photo](https://github.com/dtemizyurek/Homeworks/issues/1#issue-2269178216)
+![1](https://github.com/dtemizyurek/Homeworks/assets/52003954/71147531-ee49-4c6f-bfb1-ab5ce9b5aee4)
+
 
 
