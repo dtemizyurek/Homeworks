@@ -14,6 +14,10 @@
 - ✅ Readability  !mvc
 - ✅ Custom Views
 - ✅ Following same styling in every file
+## MVC Architecture
+![MVC-Process](https://github.com/dtemizyurek/Homeworks/assets/52003954/ad7e7013-8088-4fa2-bd0b-a33cade27e86)
+
+
 
 ## ScreenShots
 ![1](https://github.com/dtemizyurek/Homeworks/assets/52003954/71147531-ee49-4c6f-bfb1-ab5ce9b5aee4)
@@ -23,6 +27,6 @@
 ![5](https://github.com/dtemizyurek/Homeworks/assets/52003954/da91ad94-982b-424c-86b1-539dd75fc35c)
 
 
-## Display Video
+
 
 
