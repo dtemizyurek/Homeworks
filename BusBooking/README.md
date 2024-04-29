@@ -1,9 +1,9 @@
 # Project Tech Stack
-- Xcode: Version 15.0.1 - 
-- Language: Swift -
-- Minimum iOS Version: 14.0 - 
-- Design Pattern: MVC - 
-- Dependency Manager: -
+- Xcode: Version 15.0.1 
+- Language: Swift
+- Minimum iOS Version: 14.0 
+- Design Pattern: MVC 
+- Dependency Manager:
 - Dependencies: IQKeyboardManagerSwift
 - Style Guide:
 - Made With ❤️  
@@ -23,6 +23,6 @@
 ![5](https://github.com/dtemizyurek/Homeworks/assets/52003954/da91ad94-982b-424c-86b1-539dd75fc35c)
 
 
-
+## Display Video
 
 
