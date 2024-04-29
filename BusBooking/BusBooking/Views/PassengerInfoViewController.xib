@@ -14,6 +14,7 @@
                 <outlet property="collectionView" destination="NUF-iQ-CjS" id="XoE-LT-jNg"/>
                 <outlet property="dateLabel" destination="xSI-zr-4ej" id="3wL-e3-11s"/>
                 <outlet property="departureLabel" destination="CgT-pI-N7v" id="73r-yT-fxB"/>
+                <outlet property="seeDetailsButton" destination="vKL-7H-vmi" id="dGv-V5-4B5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -92,7 +93,7 @@
                     </connections>
                 </collectionView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKL-7H-vmi">
-                    <rect key="frame" x="32" y="775.66666666666663" width="329" height="34.333333333333371"/>
+                    <rect key="frame" x="80" y="775.66666666666663" width="233" height="34.333333333333371"/>
                     <color key="backgroundColor" red="0.84313726430000002" green="0.231372565" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
@@ -112,8 +113,8 @@
                 <constraint firstItem="NUF-iQ-CjS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="goN-ta-Q8K"/>
                 <constraint firstItem="NUF-iQ-CjS" firstAttribute="top" secondItem="hxo-fs-cc3" secondAttribute="bottom" id="gty-uM-yWh"/>
                 <constraint firstItem="NUF-iQ-CjS" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="hnh-Co-54z"/>
-                <constraint firstItem="vKL-7H-vmi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="i2f-Fw-7DW"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vKL-7H-vmi" secondAttribute="trailing" constant="32" id="qOS-NK-5w7"/>
+                <constraint firstItem="vKL-7H-vmi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="i2f-Fw-7DW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vKL-7H-vmi" secondAttribute="trailing" constant="80" id="qOS-NK-5w7"/>
                 <constraint firstItem="vKL-7H-vmi" firstAttribute="top" secondItem="NUF-iQ-CjS" secondAttribute="bottom" constant="8" id="v13-pw-efh"/>
             </constraints>
             <point key="canvasLocation" x="11.450381679389313" y="-11.267605633802818"/>

@@ -12,12 +12,11 @@ final class SelectSeatsViewController: UIViewController {
     @IBOutlet private weak var departureLabel: UILabel!
     @IBOutlet private weak var arrivalLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
-    
-    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet weak var selectSeatCollectionView: UICollectionView!
     
     //MARK: - Variables
-    private var totalSeats = 67
-    private var recentlySoldSeats: [Int] = []
+    var totalSeats = 67
+    var recentlySoldSeats: [Int] = []
     var departureText = String()
     var arrivalText = String()
     var dateText = String()
@@ -35,6 +34,9 @@ final class SelectSeatsViewController: UIViewController {
         collectionViewRegister()
         setupBusLayout()// Oturma düzenini oluştur
         prepareLabels()
+        if let savedSeats = UserDefaults.standard.array(forKey: "SoldSeats") as? [Int] {
+            SelectSeatsViewController.soldSeats = savedSeats
+        }
         UIAlertController.alertMessage(title: "Scroll the screen", message: "Scroll the screen to select a seat and choose one of the available seats", vc: self)
     }
     
@@ -44,9 +46,11 @@ final class SelectSeatsViewController: UIViewController {
         for seat in recentlySoldSeats {
             SelectSeatsViewController.soldSeats.append(seat)
         }
+        
         recentlySoldSeats.removeAll()
-        collectionView.reloadData()
+        selectSeatCollectionView.reloadData()
     }
+    
     
     //MARK: - Private functions
     // Oturma düzenini oluştur
@@ -79,7 +83,7 @@ final class SelectSeatsViewController: UIViewController {
     }
     
     private func collectionViewRegister() {
-        collectionView.register(UINib(nibName: "SeatsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SeatsCollectionViewCell")
+        selectSeatCollectionView.register(UINib(nibName: "SeatsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SeatsCollectionViewCell")
     }
     
     //MARK: - Button Actions
@@ -88,13 +92,11 @@ final class SelectSeatsViewController: UIViewController {
         if selectedSeats.count == 0 {
             UIAlertController.alertMessage(title: "You did not choose a seat", message: "Please choose a seat", vc: self)
         } else {
-            let buyingSeatArray = UserDefaults.standard.array(forKey: "buyingSeatArray")
             passengerInfoVC.arrival = self.arrivalText
             passengerInfoVC.departure = self.departureText
             passengerInfoVC.date = self.dateText
             passengerInfoVC.selectedSeats = self.selectedSeats
             navigationController?.pushViewController(passengerInfoVC, animated: true)
-            
         }
     }
 }
@@ -113,8 +115,8 @@ extension SelectSeatsViewController: UICollectionViewDelegate, UICollectionViewD
         
         let seatNumber = busSeatNumDict[indexPath.row] ?? ""
         
-        if isSold(seatNumber: indexPath.row) {
-            cell.seatImage.image = UIImage(named: "gray")
+        if isSold(seatNumber: indexPath.row + 1) { // indexPath.row + 1 satılmış koltukları kontrol eder
+            cell.seatImage.image = UIImage(named: "gray") // Daha önce satılan koltuklar gri renkte olacak
         } else if isSelected(seatNumber: indexPath.row + 1) {
             cell.seatImage.image = UIImage(named: "green")
         } else {
@@ -123,11 +125,11 @@ extension SelectSeatsViewController: UICollectionViewDelegate, UICollectionViewD
         
         cell.seatLabel.text = seatNumber
         
-        // Show or hide cell based on seat number availability
         cell.isHidden = seatNumber.isEmpty
         
         return cell
     }
+
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let seatNumber = indexPath.row + 1

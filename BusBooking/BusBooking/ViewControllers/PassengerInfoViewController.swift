@@ -13,6 +13,7 @@ final class PassengerInfoViewController: UIViewController {
     @IBOutlet weak var arrivalLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var seeDetailsButton: UIButton!
     
     //MARK: - Variables
     var departure = String()
@@ -29,6 +30,7 @@ final class PassengerInfoViewController: UIViewController {
         super.viewDidLoad()
         prepareLabels()
         NIBRegister()
+        customSeeDetailsButton()
     }
     
     //MARK: - Private functions
@@ -52,30 +54,36 @@ final class PassengerInfoViewController: UIViewController {
         return uuids
     }
     
+    private func customSeeDetailsButton() {
+        seeDetailsButton.layer.cornerRadius = 10
+        seeDetailsButton.layer.masksToBounds = false
+    }
+    
+    //MARK: - Button Action
     @IBAction func seeDetailsButton(_ sender: Any) {
         var allPassengerNamesEntered = true
         
-          for cell in collectionView.visibleCells {
-              guard let passengerCell = cell as? PassengerCollectionViewCell else { continue }
-              guard let passengerName = passengerCell.passengerNameTextField.text, !passengerName.isEmpty else {
-                  allPassengerNamesEntered = false
-                  break
-              }
-          }
-          if allPassengerNamesEntered {
-              let showTicketVC = ShowTicketViewController()
-              showTicketVC.departure = departure
-              showTicketVC.arrival = arrival
-              showTicketVC.date = date
-              showTicketVC.selectedSeatNumbers = selectedSeats
-              showTicketVC.person = "\(selectedSeats.count) Person"
-              showTicketVC.reservationNo = passengerId.first ?? "AAA"
-              navigationController?.pushViewController(showTicketVC, animated: true)
-          } else {
-              let alert = UIAlertController(title: "Passenger Names Missing", message: "Please enter names for all passengers.", preferredStyle: .alert)
-              alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-              self.present(alert, animated: true, completion: nil)
-          }
+        for cell in collectionView.visibleCells {
+            guard let passengerCell = cell as? PassengerCollectionViewCell else { continue }
+            guard let passengerName = passengerCell.passengerNameTextField.text, !passengerName.isEmpty else {
+                allPassengerNamesEntered = false
+                break
+            }
+        }
+        if allPassengerNamesEntered {
+            let showTicketVC = ShowTicketViewController()
+            showTicketVC.departure = departure
+            showTicketVC.arrival = arrival
+            showTicketVC.date = date
+            showTicketVC.selectedSeatNumbers = selectedSeats
+            showTicketVC.person = "\(selectedSeats.count) Person"
+            showTicketVC.reservationNo = passengerId.first ?? "AAA"
+            navigationController?.pushViewController(showTicketVC, animated: true)
+        } else {
+            let alert = UIAlertController(title: "Passenger Names Missing", message: "Please enter names for all passengers.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
 

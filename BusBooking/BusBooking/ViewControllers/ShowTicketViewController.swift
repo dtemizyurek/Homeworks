@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ShowTicketViewController: UIViewController {
+final class ShowTicketViewController: UIViewController, UIAdaptivePresentationControllerDelegate {
     //MARK: - IBOutlets
     @IBOutlet weak var departureLabel: UILabel!
     @IBOutlet weak var arrivalLabel: UILabel!
@@ -15,6 +15,7 @@ final class ShowTicketViewController: UIViewController {
     @IBOutlet weak var numberOfPersonLabel: UILabel!
     @IBOutlet weak var reservationNoLabel: UILabel!
     @IBOutlet weak var seatNumbers: UILabel!
+    @IBOutlet weak var backToHomeButton: UIButton!
     
     //MARK: - Variables
     var departure = String()
@@ -28,6 +29,23 @@ final class ShowTicketViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLabels()
+        customBackToHomePageButton()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let selectSeatsVC = navigationController?.viewControllers.first(where: { $0 is SelectSeatsViewController }) as? SelectSeatsViewController {
+            selectSeatsVC.recentlySoldSeats = selectedSeatNumbers
+            DispatchQueue.main.async {
+                if let collectionView = selectSeatsVC.selectSeatCollectionView {
+                    collectionView.reloadData()
+                }
+            }
+        }
+    }
+    private func customBackToHomePageButton() {
+        backToHomeButton.layer.cornerRadius = 10
+        backToHomeButton.layer.masksToBounds = false
     }
     
     //MARK: - Private functions

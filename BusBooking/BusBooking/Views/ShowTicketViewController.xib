@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShowTicketViewController" customModule="BusBooking" customModuleProvider="target">
             <connections>
                 <outlet property="arrivalLabel" destination="GbG-3o-K5F" id="h6P-PD-I2F"/>
+                <outlet property="backToHomeButton" destination="yfk-Zc-Zf5" id="ouy-Ix-vvs"/>
                 <outlet property="dateLabel" destination="DOQ-Fn-AX8" id="Fne-ta-DZM"/>
                 <outlet property="departureLabel" destination="tzM-i3-glT" id="WIY-15-Run"/>
                 <outlet property="numberOfPersonLabel" destination="BTg-Mx-bbr" id="RT9-hi-abP"/>
@@ -26,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfk-Zc-Zf5">
-                    <rect key="frame" x="32" y="551.66666666666663" width="329" height="34.333333333333371"/>
+                    <rect key="frame" x="80" y="551.66666666666663" width="233" height="34.333333333333371"/>
                     <color key="backgroundColor" red="0.84313726430000002" green="0.231372565" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
@@ -181,8 +182,8 @@
                 <constraint firstItem="7ag-uJ-HUH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="Tfl-3B-kWP"/>
                 <constraint firstItem="V4w-YF-2u6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ZA0-0y-dRE"/>
                 <constraint firstItem="yOX-Ln-zGI" firstAttribute="top" secondItem="7ag-uJ-HUH" secondAttribute="bottom" constant="90" id="gUb-BR-1dc"/>
-                <constraint firstItem="yfk-Zc-Zf5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="iDh-4r-8jm"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yfk-Zc-Zf5" secondAttribute="trailing" constant="32" id="qTg-2F-ScY"/>
+                <constraint firstItem="yfk-Zc-Zf5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="iDh-4r-8jm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yfk-Zc-Zf5" secondAttribute="trailing" constant="80" id="qTg-2F-ScY"/>
                 <constraint firstItem="7ag-uJ-HUH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="r9j-Py-Sp0"/>
                 <constraint firstItem="yfk-Zc-Zf5" firstAttribute="top" secondItem="V4w-YF-2u6" secondAttribute="bottom" constant="16" id="xpe-nV-v2s"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V4w-YF-2u6" secondAttribute="trailing" constant="16" id="zKg-sl-uXv"/>
