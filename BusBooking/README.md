@@ -1,4 +1,4 @@
-#Project Tech Stack
+# Project Tech Stack
 - Xcode: Version 15.0.1 - 
 - Language: Swift -
 - Minimum iOS Version: 14.0 - 
@@ -8,10 +8,14 @@
 - Style Guide:
 - Made With ❤️  
 
-#Some Highlighted Things 
+## Some Highlighted Things 
 - ✅ Storyboard Design 
 - ✅ Organized folder structure 
 - ✅ Readability  !mvc
 - ✅ Custom Views
 - ✅ Following same styling in every file
+
+## ScreenShots
+![First Photo](https://github.com/dtemizyurek/Homeworks/issues/1#issue-2269178216)
+
 
