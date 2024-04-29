@@ -71,6 +71,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" image="Revers1">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeCityButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bzF-4e-eML"/>
+                                                </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="From" translatesAutoresizingMaskIntoConstraints="NO" id="4Zk-3q-cCl">
                                                 <rect key="frame" x="8" y="6" width="30" height="30"/>
@@ -113,29 +116,10 @@
                                         <rect key="frame" x="16" y="164" width="329" height="50"/>
                                         <subviews>
                                             <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="MBW-hb-Nqx">
-                                                <rect key="frame" x="0.0" y="0.0" width="138.33333333333334" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="329" height="50"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </datePicker>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3rP-uU-aBc">
-                                                <rect key="frame" x="186.33333333333337" y="0.0" width="142.66666666666663" height="50"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQX-rD-iNt">
-                                                        <rect key="frame" x="0.0" y="0.0" width="61.333333333333336" height="50"/>
-                                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="person.fill" catalog="system" title="1" imagePadding="8"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qy0-wm-Q7o">
-                                                        <rect key="frame" x="81.333333333333343" y="0.0" width="61.333333333333343" height="50"/>
-                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="arrow.up" catalog="system" title="1" imagePadding="8"/>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -208,8 +192,6 @@
         <image name="From" width="24" height="24"/>
         <image name="Revers1" width="140" height="140"/>
         <image name="To" width="24" height="24"/>
-        <image name="arrow.up" catalog="system" width="118" height="128"/>
         <image name="bus_home" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
     </resources>
 </document>

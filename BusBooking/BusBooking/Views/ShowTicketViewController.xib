@@ -26,11 +26,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfk-Zc-Zf5">
-                    <rect key="frame" x="32" y="543.66666666666663" width="329" height="34.333333333333371"/>
+                    <rect key="frame" x="32" y="551.66666666666663" width="329" height="34.333333333333371"/>
                     <color key="backgroundColor" red="0.84313726430000002" green="0.231372565" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Back to Home Page"/>
+                    <connections>
+                        <action selector="backToHomeButton:" destination="-1" eventType="touchUpInside" id="B7w-13-sK4"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your ticket" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOX-Ln-zGI">
                     <rect key="frame" x="8" y="307.33333333333331" width="377" height="31.333333333333314"/>
@@ -181,7 +184,7 @@
                 <constraint firstItem="yfk-Zc-Zf5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="iDh-4r-8jm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yfk-Zc-Zf5" secondAttribute="trailing" constant="32" id="qTg-2F-ScY"/>
                 <constraint firstItem="7ag-uJ-HUH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="r9j-Py-Sp0"/>
-                <constraint firstItem="yfk-Zc-Zf5" firstAttribute="top" secondItem="V4w-YF-2u6" secondAttribute="bottom" constant="8" id="xpe-nV-v2s"/>
+                <constraint firstItem="yfk-Zc-Zf5" firstAttribute="top" secondItem="V4w-YF-2u6" secondAttribute="bottom" constant="16" id="xpe-nV-v2s"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V4w-YF-2u6" secondAttribute="trailing" constant="16" id="zKg-sl-uXv"/>
             </constraints>
             <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>

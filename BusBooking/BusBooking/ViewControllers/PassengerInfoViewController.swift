@@ -53,19 +53,32 @@ final class PassengerInfoViewController: UIViewController {
     }
     
     @IBAction func seeDetailsButton(_ sender: Any) {
-        let showTicketVC = ShowTicketViewController()
+        var allPassengerNamesEntered = true
         
-        // Verileri aktar
-        showTicketVC.departure = departure
-        showTicketVC.arrival = arrival
-        showTicketVC.date = date
-        showTicketVC.selectedSeatNumbers = selectedSeats
-        showTicketVC.person = "\(selectedSeats.count) Person"
-        
-        showTicketVC.reservationNo = passengerId.first ?? "AAA"
-        navigationController?.pushViewController(showTicketVC, animated: true)    }
-    
+          for cell in collectionView.visibleCells {
+              guard let passengerCell = cell as? PassengerCollectionViewCell else { continue }
+              guard let passengerName = passengerCell.passengerNameTextField.text, !passengerName.isEmpty else {
+                  allPassengerNamesEntered = false
+                  break
+              }
+          }
+          if allPassengerNamesEntered {
+              let showTicketVC = ShowTicketViewController()
+              showTicketVC.departure = departure
+              showTicketVC.arrival = arrival
+              showTicketVC.date = date
+              showTicketVC.selectedSeatNumbers = selectedSeats
+              showTicketVC.person = "\(selectedSeats.count) Person"
+              showTicketVC.reservationNo = passengerId.first ?? "AAA"
+              navigationController?.pushViewController(showTicketVC, animated: true)
+          } else {
+              let alert = UIAlertController(title: "Passenger Names Missing", message: "Please enter names for all passengers.", preferredStyle: .alert)
+              alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+              self.present(alert, animated: true, completion: nil)
+          }
+    }
 }
+
 //MARK: - CollectionView Extensions
 extension PassengerInfoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -81,18 +94,20 @@ extension PassengerInfoViewController: UICollectionViewDelegate, UICollectionVie
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PassengerCollectionViewCell.identifier, for: indexPath) as? PassengerCollectionViewCell
         else { return UICollectionViewCell() }
         
-        cell.passengerNoTextField.text = "Passenger \(indexPath.item + 1)"
-        let uuidArray = generateUUIDs(count: selectedSeats.count)
-        let uuidStrings = uuidArray.map { String($0.uuidString.prefix(8)) }
-        passengerId = uuidStrings
-        cell.idTextField.text = uuidStrings[indexPath.row]
-        cell.idTextField.isUserInteractionEnabled = false
-        cell.passengerNoTextField.isUserInteractionEnabled = false
-        cell.passengerNoTextField.delegate = self
-        
+        if cell.passengerNameTextField == nil {
+            UIAlertController.alertMessage(title: "Passenger Names Missing", message: "Please enter names for all passengers.", vc: self)
+        } else {
+            cell.passengerNoTextField.text = "Passenger \(indexPath.item + 1)"
+            let uuidArray = generateUUIDs(count: selectedSeats.count)
+            let uuidStrings = uuidArray.map { String($0.uuidString.prefix(8)) }
+            passengerId = uuidStrings
+            cell.idTextField.text = uuidStrings[indexPath.row]
+            cell.idTextField.isUserInteractionEnabled = false
+            cell.passengerNoTextField.isUserInteractionEnabled = false
+            cell.passengerNoTextField.delegate = self
+        }
         return cell
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth: CGFloat = collectionView.frame.width - 20

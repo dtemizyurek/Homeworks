@@ -141,6 +141,24 @@ final class HomeViewContoller: UIViewController {
             print("Bus Service VC")
         }
     }
+    
+    @IBAction func changeCityButton(_ sender: Any) {
+        let tempDeparture = departureTextfield.text
+            let tempArrival = arrivalTextField.text
+            
+            departureTextfield.text = tempArrival
+            
+            arrivalTextField.text = tempDeparture
+        
+        UIView.animate(withDuration: 0.3, animations: {
+                self.changeButton.transform = CGAffineTransform(rotationAngle: .pi) // 180 derece dönme
+            }) { (_) in
+                UIView.animate(withDuration: 0.3) {
+                    self.changeButton.transform = .identity // Normal konumuna geri dönme
+                }
+            }
+    }
+    
 }
 
 //MARK: - PickerView Extensions
