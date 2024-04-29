@@ -13,6 +13,7 @@ final class SelectSeatsViewController: UIViewController {
     @IBOutlet private weak var arrivalLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet weak var selectSeatCollectionView: UICollectionView!
+    @IBOutlet weak var nextButton: UIButton!
     
     //MARK: - Variables
     var totalSeats = 67
@@ -38,6 +39,7 @@ final class SelectSeatsViewController: UIViewController {
             SelectSeatsViewController.soldSeats = savedSeats
         }
         UIAlertController.alertMessage(title: "Scroll the screen", message: "Scroll the screen to select a seat and choose one of the available seats", vc: self)
+        customNextButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,6 +88,11 @@ final class SelectSeatsViewController: UIViewController {
         selectSeatCollectionView.register(UINib(nibName: "SeatsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SeatsCollectionViewCell")
     }
     
+    private func customNextButton() {
+        nextButton.layer.cornerRadius = 10
+        nextButton.layer.masksToBounds = true
+    }
+    
     //MARK: - Button Actions
     @IBAction func buyTickets(_ sender: Any) {
         let passengerInfoVC = PassengerInfoViewController(nibName: PassengerInfoViewController.identifier, bundle: nil)
@@ -130,7 +137,6 @@ extension SelectSeatsViewController: UICollectionViewDelegate, UICollectionViewD
         return cell
     }
 
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let seatNumber = indexPath.row + 1
         

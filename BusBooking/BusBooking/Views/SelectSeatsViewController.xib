@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,6 +13,7 @@
                 <outlet property="arrivalLabel" destination="llB-xb-Wo7" id="5rH-XF-Yxg"/>
                 <outlet property="dateLabel" destination="ByU-vI-ypq" id="L01-RG-qA4"/>
                 <outlet property="departureLabel" destination="nit-Lp-eiU" id="1gX-ZI-yI3"/>
+                <outlet property="nextButton" destination="vU1-OY-dQb" id="PaY-dn-GtA"/>
                 <outlet property="selectSeatCollectionView" destination="Odo-df-AY7" id="VJZ-eU-z4b"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

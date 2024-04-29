@@ -30,12 +30,9 @@ final class ShowTicketViewController: UIViewController, UIAdaptivePresentationCo
         super.viewDidLoad()
         setupLabels()
         customBackToHomePageButton()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
         if let selectSeatsVC = navigationController?.viewControllers.first(where: { $0 is SelectSeatsViewController }) as? SelectSeatsViewController {
             selectSeatsVC.recentlySoldSeats = selectedSeatNumbers
+            UserDefaults.standard.setValue(selectedSeatNumbers, forKey: "SoldSeats")
             DispatchQueue.main.async {
                 if let collectionView = selectSeatsVC.selectSeatCollectionView {
                     collectionView.reloadData()
@@ -43,6 +40,7 @@ final class ShowTicketViewController: UIViewController, UIAdaptivePresentationCo
             }
         }
     }
+    
     private func customBackToHomePageButton() {
         backToHomeButton.layer.cornerRadius = 10
         backToHomeButton.layer.masksToBounds = false
@@ -57,6 +55,7 @@ final class ShowTicketViewController: UIViewController, UIAdaptivePresentationCo
         reservationNoLabel.text = reservationNo
         seatNumbers.text = (selectedSeatNumbers.map { String($0) }.joined(separator: ", "))
     }
+    
     //MARK: - Button Action
     @IBAction func backToHomeButton(_ sender: UIButton) {
         if let navigationController = self.navigationController {
